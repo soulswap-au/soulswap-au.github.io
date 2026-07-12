@@ -1,8 +1,9 @@
 /* Base retro setup */
 body {
     background-color: #000;
-    color: #0f0; /* Retro terminal green */
-    font-family: "Courier New", Courier, monospace;
+    color: #0f0;
+    font-family: 'VT323', monospace; /* This line applies the pixel font */
+    font-size: 1.2rem; /* Bumped up slightly because pixel fonts run small */
     text-align: center;
     margin: 0;
     padding: 20px;
