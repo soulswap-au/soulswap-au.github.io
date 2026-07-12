@@ -201,19 +201,21 @@ h2 {
 
 .movies-grid {
     display: grid;
-    /* This makes the grid responsive without media queries */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-    gap: 30px;
-    padding: 0 20px;
+    /* Reduced min width to 160px, and capped max width at 220px to keep them small */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px)); 
+    gap: 50px; /* Increased space between cards (was 30px) */
+    justify-content: center; /* Keeps the smaller cards centered in the container */
+    padding: 20px 0;
 }
 
 /* The individual movie blocks */
 .movie-card {
     background-color: #111;
     border: 2px solid #333;
-    padding: 15px;
+    padding: 10px; /* Slightly reduced padding to match smaller cards */
     transition: transform 0.2s, border-color 0.2s;
     cursor: pointer;
+    width: 100%;
 }
 
 /* Hover effect to make them pop like Netflix */
