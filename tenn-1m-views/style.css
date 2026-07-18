@@ -4,6 +4,7 @@
     src: url('fonts/8bitoperator_jve.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: block; /* Forcing the browser to wait for the font, should do WOFF2 instead */
 }
 
 /* Base retro setup */
