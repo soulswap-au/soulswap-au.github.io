@@ -1,3 +1,11 @@
+*/ fonts */
+@font-face {
+    font-family: '8bitOperatorPlus';
+    src: url('fonts/8bitoperator_jve.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Base retro setup */
 body {
     background-color: #000;
@@ -16,14 +24,6 @@ body {
         #111
     );
     background-size: 20px 20px;
-}
-
-*/ fonts */
-@font-face {
-    font-family: '8bitOperatorPlus';
-    src: url('fonts/8bitoperator_jve.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 /* Chaotic Headers */
