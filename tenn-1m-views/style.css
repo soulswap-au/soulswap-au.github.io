@@ -15,15 +15,6 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
-    background-image: repeating-linear-gradient(
-        45deg,
-        #111 25%,
-        transparent 25%,
-        transparent 75%,
-        #111 75%,
-        #111
-    );
-    background-size: 20px 20px;
 }
 
 /* Chaotic Headers */
@@ -185,7 +176,7 @@ h2 {
 /* --- Movies Section (VHS / Retro Poster Vibe) --- */
 .movies-section {
     margin-top: 40px;
-    background-color: #050510; /* Very dark blue for a cinema feel */
+    background-color: #050510; /* Very dark blue background */
     padding: 30px 20px;
     border: 4px solid #ff00ff;
     border-radius: 10px;
@@ -210,7 +201,7 @@ h2 {
 
 .movies-grid {
     display: grid;
-    /* Reduced min width to 160px, and capped max width at 220px to keep them small */
+    /* Reduced min width to 160px, and capped max width at 220px to keep it small */
     grid-template-columns: repeat(auto-fit, minmax(160px, 220px)); 
     gap: 50px; /* Increased space between cards (was 30px) */
     justify-content: center; /* Keeps the smaller cards centered in the container */
@@ -227,17 +218,16 @@ h2 {
     width: 100%;
 }
 
-/* Hover effect to make them pop like Netflix */
+/* Hover effect to make them pop */
 .movie-card:hover {
     transform: scale(1.05);
     border-color: #00ff00;
     box-shadow: 0 0 15px #00ff00;
 }
 
-/* Constrain the poster images to standard movie dimensions */
+/* Constrain the poster images to be 2:3 */
 .poster-container {
     width: 100%;
-    /* Standard movie poster aspect ratio is roughly 2:3 */
     aspect-ratio: 2 / 3; 
     background-color: #222;
     overflow: hidden;
@@ -297,14 +287,14 @@ footer {
     box-shadow: 0 0 20px #00ffff;
     padding: 20px;
     width: 90%;
-    max-width: 800px; /* Made wider to fit the video nicely */
-    max-height: 85vh; /* Prevents it from being taller than the screen */
-    overflow-y: auto; /* Adds a scrollbar if content is too long */
+    max-width: 800px; /* Made wider to fit the video */
+    max-height: 85vh; /* Prevents from being taller than screen */
+    overflow-y: auto; /* Adds scrollbar if content is too long */
     position: relative;
     text-align: left;
 }
 
-/* Optional: Make the scrollbar look retro */
+/* Make the scrollbar look retro */
 .modal-content::-webkit-scrollbar {
     width: 12px;
 }
@@ -316,7 +306,7 @@ footer {
     background: #ff00ff; 
 }
 
-/* Style the video container to keep a perfect 16:9 ratio */
+/* Style the video container to keep 16:9 ratio */
 .modal-video-container {
     width: 100%;
     aspect-ratio: 16 / 9;
