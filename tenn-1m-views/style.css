@@ -290,15 +290,44 @@ footer {
     align-items: center;
 }
 
+/* Update the existing modal-content rule */
 .modal-content {
     background: #050510;
     border: 4px ridge #00ffff;
     box-shadow: 0 0 20px #00ffff;
     padding: 20px;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px; /* Made wider to fit the video nicely */
+    max-height: 85vh; /* Prevents it from being taller than the screen */
+    overflow-y: auto; /* Adds a scrollbar if content is too long */
     position: relative;
     text-align: left;
+}
+
+/* Optional: Make the scrollbar look retro */
+.modal-content::-webkit-scrollbar {
+    width: 12px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: #111; 
+    border-left: 2px solid #00ffff;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #ff00ff; 
+}
+
+/* Style the video container to keep a perfect 16:9 ratio */
+.modal-video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+    border: 3px dashed #ff00ff;
+    background-color: #111;
+}
+
+.modal-video-container iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .close-btn {
