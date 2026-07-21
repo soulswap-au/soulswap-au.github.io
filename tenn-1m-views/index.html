@@ -52,9 +52,18 @@
             
             <div class="movies-grid">
                 <!-- Movie 1 -->
-                <div class="movie-card" onclick="document.getElementById('movieModal').style.display='flex'">
+                <div class="movie-card" 
+                     onclick="openModal(this)"
+                     data-title="SLASHER NIGHT"
+                     data-rating="R 🔴 1984"
+                     data-poster="https://i.etsystatic.com/26392138/r/il/20d29e/6701045643/il_1080xN.6701045643_coih.jpg"
+                     data-trailer="https://www.youtube.com/embed/fT5jOISvKWI?si=z4rFhZUFKgXHR4co" 
+                     data-desc="A group of teens head to a cabin in the woods. You know exactly what happens next, but this time with 100% more synthwave and neon blood."
+                     data-comment-user="xX_DarkSoul_Xx"
+                     data-comment-text="This movie ruled! Best practical effects of 1984.">
+                    
                     <div class="poster-container">
-                         <img src="https://i.etsystatic.com/26392138/r/il/20d29e/6701045643/il_1080xN.6701045643_coih.jpg" alt="80s Horror Icons Movie Poster">
+                         <img src="https://i.etsystatic.com/26392138/r/il/20d29e/6701045643/il_1080xN.6701045643_coih.jpg" alt="Slasher Night">
                     </div>
                     <div class="movie-info">
                         <h4>SLASHER NIGHT</h4>
@@ -92,25 +101,63 @@
     <footer>
         <p>This site is part of a glitchy web ring!</p>
     </footer>
-    <!-- The Modal (Hidden by default) -->
+    <!-- The Scrollable Modal with Video -->
     <div id="movieModal" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-btn" onclick="document.getElementById('movieModal').style.display='none'">&times;</span>
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
             <div class="modal-header">
-                <img src="https://i.etsystatic.com/26392138/r/il/20d29e/6701045643/il_1080xN.6701045643_coih.jpg" alt="Slasher Night" class="modal-poster">
+                <img id="modalPoster" src="" alt="Movie Poster" class="modal-poster">
                 <div class="modal-desc">
-                    <h2>SLASHER NIGHT</h2>
-                    <p class="rating">R 🔴 1984</p>
-                    <p>A group of teens head to a cabin in the woods. You know exactly what happens next, but this time with 100% more synthwave and neon blood.</p>
+                    <h2 id="modalTitle">TITLE</h2>
+                    <p id="modalRating" class="rating">RATING</p>
+                    <p id="modalDescText">Description goes here...</p>
                 </div>
             </div>
+    
+            <!-- New Video Section -->
+            <div class="modal-video-container">
+                <iframe id="modalTrailer" src="" title="Trailer" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
             <div class="modal-comments">
                 <h3>>>> USER COMMENTS_</h3>
-                <p><strong>xX_DarkSoul_Xx:</strong> This movie ruled! Best practical effects of 1984.</p>
+                <p><strong id="modalCommentUser">User:</strong> <span id="modalCommentText">Comment text</span></p>
                 <p><strong>NeonKid99:</strong> anyone know the name of the song playing during the chase scene???</p>
+                <p><strong>RetroFan:</strong> I still have this on VHS somewhere!</p>
                 <p><strong>Webmaster:</strong> Plz stop spamming my guestbook thx.</p>
             </div>
         </div>
     </div>
+    <script>
+        function openModal(cardElement) {
+            // Grab data
+            const title = cardElement.getAttribute('data-title');
+            const rating = cardElement.getAttribute('data-rating');
+            const posterSrc = cardElement.getAttribute('data-poster');
+            const desc = cardElement.getAttribute('data-desc');
+            const trailerSrc = cardElement.getAttribute('data-trailer');
+            const commentUser = cardElement.getAttribute('data-comment-user');
+            const commentText = cardElement.getAttribute('data-comment-text');
+    
+            // Inject data
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalRating').innerText = rating;
+            document.getElementById('modalPoster').src = posterSrc;
+            document.getElementById('modalDescText').innerText = desc;
+            document.getElementById('modalTrailer').src = trailerSrc;
+            document.getElementById('modalCommentUser').innerText = commentUser + ":";
+            document.getElementById('modalCommentText').innerText = commentText;
+    
+            // Show modal
+            document.getElementById('movieModal').style.display = 'flex';
+        }
+    
+        function closeModal() {
+            document.getElementById('movieModal').style.display = 'none';
+            // Clear the iframe src so the video stops playing in the background
+            document.getElementById('modalTrailer').src = "";
+        }
+    </script>
 </body>
 </html>
