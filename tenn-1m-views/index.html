@@ -36,9 +36,9 @@
         </div>
 
         <div class="audio-player">
-            <p>LISTEN TO THIS!!!</p>
-            <audio controls controlsList="nodownload">
-                <source src="audio/Freeze-Frame.mp3" type="audio/mpeg">
+            <p>RADIO ROULETTE!!!</p>
+            <audio id="chaos-radio" controls controlsList="nodownload">
+                <!-- The source is intentionally empty; JavaScript will inject it -->
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -196,5 +196,37 @@
             document.body.style.overflow = ''; // <-- THIS RESTORES THE SCROLLING
         }
     </script>
+    <script>
+        // --- CHAOS RADIO SCRIPT ---
+    
+        const playlist = [
+            "audio/Freeze-Frame.mp3",
+            "audio/Azalea_HGA.mp3"
+        ];
+    
+        const audioPlayer = document.getElementById("chaos-radio");
+        let currentSong = "";
+    
+        function swapToRandomSong() {
+            let newSong = "";
+            
+            // Pick a random song, but ensure it's not the exact same one that just played
+            do {
+                newSong = playlist[Math.floor(Math.random() * playlist.length)];
+            } while (newSong === currentSong && playlist.length > 1);
+            
+            currentSong = newSong;
+            audioPlayer.src = currentSong;
+        }
+    
+        // loads a random song at page open
+        swapToRandomSong();
+    
+        // loads a new track every time the audio is paused
+        // (and triggers automatically when a song finishes playing)
+        audioPlayer.addEventListener("pause", function() {
+            swapToRandomSong();
+        });
+</script>
 </body>
 </html>
