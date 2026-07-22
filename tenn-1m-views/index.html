@@ -56,12 +56,14 @@
                      onclick="openModal(this)"
                      data-title="SLASHER NIGHT"
                      data-rating="R 🔴 1984"
-                     data-poster="https://i.etsystatic.com/26392138/r/il/20d29e/6701045643/il_1080xN.6701045643_coih.jpg"
-                     data-trailer="https://www.youtube.com/embed/fT5jOISvKWI?si=z4rFhZUFKgXHR4co" 
+                     data-poster="images/son_of_man.png"
+                     data-trailer="https://www.youtube.com/embed/dQw4w9WgXcQ" 
                      data-desc="A group of teens head to a cabin in the woods. You know exactly what happens next, but this time with 100% more synthwave and neon blood."
-                     data-comment-user="xX_DarkSoul_Xx"
-                     data-comment-text="This movie ruled! Best practical effects of 1984.">
-                    
+                     data-comments='[
+                        {"user": "xX_DarkSoul_Xx", "text": "This movie ruled! Best practical effects of 1984."},
+                        {"user": "NeonKid99", "text": "anyone know the name of the song playing during the chase scene???"},
+                        {"user": "RetroFan", "text": "I still have this on VHS somewhere!"}
+                     ]'>
                     <div class="poster-container">
                          <img src="https://i.etsystatic.com/26392138/r/il/20d29e/6701045643/il_1080xN.6701045643_coih.jpg" alt="Slasher Night">
                     </div>
@@ -70,24 +72,43 @@
                         <p class="rating">R 🔴 1984</p>
                     </div>
                 </div>
-                
+            
                 <!-- Movie 2 -->
-                <a href="forbidden-planet.html" style="text-decoration: none;">
-                    <div class="movie-card">
-                        <div class="poster-container">
-                            <img src="https://i.etsystatic.com/53271677/r/il/08a350/6221996111/il_fullxfull.6221996111_k3r0.jpg" alt="Forbidden Planet Sci-Fi Poster">
-                        </div>
-                        <div class="movie-info">
-                            <h4>FORBIDDEN PLANET</h4>
-                            <p class="rating">PG 🟡 1956</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Movie 3 -->
-                <div class="movie-card">
+                <div class="movie-card" 
+                     onclick="openModal(this)"
+                     data-title="FORBIDDEN PLANET"
+                     data-rating="PG 🟡 1956"
+                     data-poster="https://i.etsystatic.com/53271677/r/il/08a350/6221996111/il_fullxfull.6221996111_k3r0.jpg"
+                     data-trailer="https://www.youtube.com/embed/8v1v802YQ1Q" 
+                     data-desc="An expedition to a distant planet uncovers the remains of a highly advanced alien civilization... and a terrifying invisible force that destroyed them."
+                     data-comments='[
+                        {"user": "RobbyTheRobotFan", "text": "The electronic soundtrack is still mind-blowing."},
+                        {"user": "SpaceCadet", "text": "Idk, it was a bit slow, but the sets were cool."},
+                        {"user": "SciFi_Historian", "text": "This basically inspired Star Trek."}
+                     ]'>
                     <div class="poster-container">
-                        <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007" alt="Cyberpunk Edgerunners Poster">
+                        <img src="https://i.etsystatic.com/53271677/r/il/08a350/6221996111/il_fullxfull.6221996111_k3r0.jpg" alt="Forbidden Planet">
+                    </div>
+                    <div class="movie-info">
+                        <h4>FORBIDDEN PLANET</h4>
+                        <p class="rating">PG 🟡 1956</p>
+                    </div>
+                </div>
+            
+                <!-- Movie 3 -->
+                <div class="movie-card" 
+                     onclick="openModal(this)"
+                     data-title="NEO TOKYO 2099"
+                     data-rating="TV-MA 🔴 2022"
+                     data-poster="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007"
+                     data-trailer="https://www.youtube.com/embed/JtIAcgFE0M8" 
+                     data-desc="In a dystopian future where corporations rule, one hacker must upload his consciousness to the mainframe to save his digitized dog."
+                     data-comments='[
+                        {"user": "CyberPunk99", "text": "The soundtrack is pure fire, but the ending was confusing???"},
+                        {"user": "NetRunner", "text": "I want that motorcycle."}
+                     ]'>
+                    <div class="poster-container">
+                        <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007" alt="Neo Tokyo 2099">
                     </div>
                     <div class="movie-info">
                         <h4>NEO TOKYO 2099</h4>
@@ -121,33 +142,48 @@
             </div>
     
             <div class="modal-comments">
-                <h3>>>> USER COMMENTS_</h3>
-                <p><strong id="modalCommentUser">User:</strong> <span id="modalCommentText">Comment text</span></p>
-                <p><strong>NeonKid99:</strong> anyone know the name of the song playing during the chase scene???</p>
-                <p><strong>RetroFan:</strong> I still have this on VHS somewhere!</p>
-                <p><strong>Webmaster:</strong> Plz stop spamming my guestbook thx.</p>
+                
             </div>
         </div>
     </div>
     <script>
         function openModal(cardElement) {
-            // Grab data
+            // Grab basic data
             const title = cardElement.getAttribute('data-title');
             const rating = cardElement.getAttribute('data-rating');
             const posterSrc = cardElement.getAttribute('data-poster');
             const desc = cardElement.getAttribute('data-desc');
             const trailerSrc = cardElement.getAttribute('data-trailer');
-            const commentUser = cardElement.getAttribute('data-comment-user');
-            const commentText = cardElement.getAttribute('data-comment-text');
     
-            // Inject data
+            // Inject basic data
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalRating').innerText = rating;
             document.getElementById('modalPoster').src = posterSrc;
             document.getElementById('modalDescText').innerText = desc;
             document.getElementById('modalTrailer').src = trailerSrc;
-            document.getElementById('modalCommentUser').innerText = commentUser + ":";
-            document.getElementById('modalCommentText').innerText = commentText;
+    
+            // --- HANDLE DYNAMIC COMMENTS ---
+            const commentsContainer = document.getElementById('modalCommentsContainer');
+            // Clear the old comments and put the header back
+            commentsContainer.innerHTML = '<h3>>>> USER COMMENTS_</h3>'; 
+            
+            // Grab the JSON string and convert it into a JavaScript array
+            const commentsJSON = cardElement.getAttribute('data-comments');
+            if (commentsJSON) {
+                const commentsArray = JSON.parse(commentsJSON);
+                
+                // Loop through each comment and add it to the page
+                commentsArray.forEach(comment => {
+                    const p = document.createElement('p');
+                    p.innerHTML = `<strong>${comment.user}:</strong> ${comment.text}`;
+                    commentsContainer.appendChild(p);
+                });
+            }
+    
+            // Always add the webmaster complaint at the very bottom
+            const webmasterP = document.createElement('p');
+            webmasterP.innerHTML = `<strong>Webmaster:</strong> Plz stop spamming my guestbook thx.`;
+            commentsContainer.appendChild(webmasterP);
     
             // Show modal
             document.getElementById('movieModal').style.display = 'flex';
@@ -155,7 +191,6 @@
     
         function closeModal() {
             document.getElementById('movieModal').style.display = 'none';
-            // Clear the iframe src so the video stops playing in the background
             document.getElementById('modalTrailer').src = "";
         }
     </script>
