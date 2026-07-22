@@ -367,3 +367,31 @@ footer {
     color: #0f0;
     margin-bottom: 5px;
 }
+
+/* --- Internal Pages Content Box --- */
+.content-box {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 3px dashed #00ff00;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: left;
+    color: #fff;
+    box-shadow: 6px 6px 0px #ff0000;
+    font-size: 1.2rem;
+}
+
+.content-box h3 {
+    color: #ff00ff;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.retro-gif {
+    display: block;
+    margin: 30px auto;
+    max-width: 250px;
+    border: 2px solid #fff;
+}
