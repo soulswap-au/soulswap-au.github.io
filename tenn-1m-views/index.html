@@ -187,11 +187,13 @@
     
             // Show modal
             document.getElementById('movieModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // <-- THIS LOCKS THE SCROLLING
         }
     
         function closeModal() {
             document.getElementById('movieModal').style.display = 'none';
             document.getElementById('modalTrailer').src = "";
+            document.body.style.overflow = ''; // <-- THIS RESTORES THE SCROLLING
         }
     </script>
 </body>
