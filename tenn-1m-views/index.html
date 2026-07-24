@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenn 1M VIEWS!!!</title>
+    <title>TENN: STAY TUNED</title>
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <marquee class="fast-marquee">TENN 1M VIEWS!!! TENN 1M VIEWS!!! WE DID IT!!!!!!</marquee>
-        <h1>TENN 1M VIEWS!!!</h1>
-        <h2>IT'S OVER!!!!!</h2>
+        <marquee class="fast-marquee">TENN 1M VIEWS!!! WE DID IT!!!!!!</marquee>
+        <h1>TENN: STAY TUNED!!!</h1>
+        <h2>IT'S SHOW TIME...</h2>
     </header>
 
     <main>
@@ -62,12 +62,12 @@
             </audio>
         </div>
         
-        <marquee class="emoji-marquee">📼 BE KIND, REWIND! 🍿 TONIGHT'S FEATURE PRESENTATION 📼</marquee>
+        <marquee class="emoji-marquee">SMILE AND SCREAM, ENTERTAINMENT ON YOUR SCREEN!</marquee>
 
         <!-- Movie Posters Grid -->
         <section class="movies-section">
-            <h3>NOW SHOWING IN GLORIOUS VHS</h3>
-            <p class="movie-subtext">Click the covers to start streaming...</p>
+            <h3>NNOW STREAMING...</h3>
+            <p class="movie-subtext">Click the posters and enjoy</p>
             
             <div class="movies-grid">
                 <!-- Movie 1 -->
@@ -77,11 +77,11 @@
                      data-rating=" ★★★★☆ "
                      data-poster="images/son_of_man.png"
                      data-trailer="https://www.youtube.com/embed/fT5jOISvKWI" 
-                     data-desc="A group of teens head to a cabin in the woods. You know exactly what happens next, but this time with 100% more synthwave and neon blood."
+                     data-desc="A man explores through time to become stronger and find answers about his world."
                      data-comments='[
-                        {"user": "xX_DarkSoul_Xx", "text": "This movie ruled! Wantch it with a friend."},
-                        {"user": "NeonKid99", "text": "anyone know the name of the original song???"},
-                        {"user": "RetroFan", "text": "I still have this on VHS somewhere!"}
+                        {"user": "krizkroz", "text": "no idea about what happened there"},
+                        {"user": "NormalUser", "text": "A man for all to see."},
+                        {"user": "GaBoom", "text": "That was... somethin'"}
                      ]'>
                     <div class="poster-container">
                          <img src="images/son_of_man.png" alt="Son of Man">
@@ -98,12 +98,12 @@
                      data-title="A DARK ZONE"
                      data-rating=" ★★★★★ "
                      data-poster="images/a_dark_zone_poster.png"
-                     data-trailer="" 
-                     data-desc="An expedition to a distant planet uncovers the remains of a highly advanced alien civilization... and a terrifying invisible force that destroyed them."
+                     data-trailer=""
+                     data-desc="A small canine falls into a dark zone, searching for the light that will let them shine again. Instead, they awaken something bigger and scarier than they could imagine..."
                      data-comments='[
-                        {"user": "RobbyTheRobotFan", "text": "The electronic soundtrack is still mind-blowing."},
-                        {"user": "SpaceCadet", "text": "Idk, it was a bit slow, but the sets were cool."},
-                        {"user": "SciFi_Historian", "text": "This basically inspired Star Trek."}
+                        {"user": "cattipetti", "text": "Dark. Cool."},
+                        {"user": "GaBoom", "text": "One of the best films I've seen in a long time! It will definitely give me something to think about tonight."},
+                        {"user": "holiday_gurl", "text": "Someone made me watch this movie and I couldn't even last 10 minutes XP"}
                      ]'>
                     <div class="poster-container">
                         <img src="images/a_dark_zone_poster.png" alt="a_dark_zone">
@@ -117,20 +117,21 @@
                 <!-- Movie 3 -->
                 <div class="movie-card" 
                      onclick="openModal(this)"
-                     data-title="NEO TOKYO 2099"
+                     data-title="NEO"
                      data-rating=" ★★☆☆☆ "
                      data-poster="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007"
-                     data-trailer="https://www.youtube.com/embed/JtIAcgFE0M8" 
-                     data-desc="In a dystopian future where corporations rule, one hacker must upload his consciousness to the mainframe to save his digitized dog."
+                     data-trailer="" 
+                     data-desc="Description"
                      data-comments='[
-                        {"user": "CyberPunk99", "text": "The soundtrack is pure fire, but the ending was confusing???"},
-                        {"user": "NetRunner", "text": "I want that motorcycle."}
+                        {"user": "Username", "text": "Review"},
+                        {"user": "Username 2", "text": "Review 2"},
+
                      ]'>
                     <div class="poster-container">
-                        <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007" alt="Neo Tokyo 2099">
+                        <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007" alt="Neo">
                     </div>
                     <div class="movie-info">
-                        <h4>NEO TOKYO 2099</h4>
+                        <h4>NEO</h4>
                         <p class="rating"> ★★☆☆☆ </p>
                     </div>
                 </div>
@@ -191,7 +192,7 @@
             audioPlayer.src = currentSong.file;
 
             // Update the marquee text
-            const statusText = isPlaying ? `PLAYING: ${currentSong.title}`  : "TENN WAITING";
+            const statusText = isPlaying ? `PLAYING: ${currentSong.title}`  : "TENN'S WAITING...";
             songMarquee.innerText = `>>> ${statusText} <<<`;
         }
     
@@ -280,7 +281,7 @@
             
             // Handle dynamic comments
             const commentsContainer = document.getElementById('modalCommentsContainer');
-            commentsContainer.innerHTML = '<h3>>>> USER COMMENTS_</h3>'; 
+            commentsContainer.innerHTML = '<h3>>>> REVIEWS</h3>'; 
             
             const commentsJSON = cardElement.getAttribute('data-comments');
             if (commentsJSON) {
