@@ -395,3 +395,31 @@ footer {
     max-width: 250px;
     border: 2px solid #fff;
 }
+
+/* --- Custom Retro Audio Button --- */
+.retro-btn {
+    background-color: #ff00ff;
+    color: #000;
+    /* Inherits your 8bitOperatorPlus font */
+    font-family: inherit; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: 4px solid #fff;
+    cursor: pointer;
+    box-shadow: 6px 6px 0px #00ffff;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    margin-top: 10px;
+}
+
+/* Makes the button "press down" when clicked */
+.retro-btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0px #00ffff;
+}
+
+/* Remove the old default audio tag outline rule just in case */
+.audio-player audio {
+    display: none; 
+}
