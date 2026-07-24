@@ -302,7 +302,7 @@
                 const rating = cardElement.getAttribute('data-rating');
                 const posterSrc = cardElement.getAttribute('data-poster');
                 const desc = cardElement.getAttribute('data-desc');
-                const trailerSrc = cardElement.getAttribute('data-trailer');
+                let trailerSrc = cardElement.getAttribute('data-trailer');
     
                 // Add the YouTube API tag to the modal video so we can control it later
                 if (!trailerSrc.includes('enablejsapi=1')) {
