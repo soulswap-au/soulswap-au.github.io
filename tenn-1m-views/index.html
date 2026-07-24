@@ -210,7 +210,7 @@
     
         const playlist = [
                 { file: "audio/Freeze-Frame.mp3", title: "Playing freezzee_frammmeee by Juan Gato..." },
-                { file: "audio/Freeze-Frame.mp3", title: "Playing hes_groovy_and_(neo) by Azalea..." },
+                { file: "audio/Azalea_HGA.mp3", title: "Playing hes_groovy_and_(neo) by Azalea..." },
             ];
     
         const audioPlayer = document.getElementById("chaos-radio");
@@ -218,7 +218,7 @@
         const songMarquee = document.getElementById("song-marquee");
         let currentSong = "";
     
-        function swapToRandomSong() {
+        function swapToRandomSong(isPlaying) {
             let newSong = "";
             do {
                 newSong = playlist[Math.floor(Math.random() * playlist.length)];
@@ -233,7 +233,7 @@
         }
     
             // loads a random song at page open
-            swapToRandomSong();
+            swapToRandomSong(false);
     
         // Toggle play/pause when the button is clicked
         playBtn.addEventListener("click", function() {
@@ -245,7 +245,7 @@
             } else {
                 audioPlayer.pause();
                 // loads a new track every time the audio is paused
-                swapToRandomSong();
+                swapToRandomSong(false);
                 playBtn.innerText = "▶ PLAY";
                 playBtn.style.backgroundColor = "#ff00ff";
             }
@@ -253,7 +253,7 @@
     
         // (and triggers automatically when a song finishes playing)
         audioPlayer.addEventListener("ended", function() {
-            swapToRandomSong();
+            swapToRandomSong(true);
             audioPlayer.play();
         });
     </script>
