@@ -258,15 +258,26 @@
             const desc = cardElement.getAttribute('data-desc');
             let trailerSrc = cardElement.getAttribute('data-trailer');
     
-    
-    
             // Inject basic data
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalRating').innerText = rating;
             document.getElementById('modalPoster').src = posterSrc;
             document.getElementById('modalDescText').innerText = desc;
-            document.getElementById('modalTrailer').src = trailerSrc;
-    
+
+            const trailerIframe = document.getElementById('modalTrailer');
+            const videoContainer = trailerIframe.parentElement; // Grabs the dashed box around the video
+                // Only append api if src exist
+                if (trailerSrc) {
+                    if (!trailerSrc.includes('enablejsapi=1')) {
+                        trailerSrc += (trailerSrc.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                    }
+                    trailerIframe.src = trailerSrc;
+                    videoContainer.style.display = 'block'; 
+                } else {
+                    trailerIframe.src = "";
+                    videoContainer.style.display = 'none'; 
+                }
+            
             // Handle dynamic comments
             const commentsContainer = document.getElementById('modalCommentsContainer');
             commentsContainer.innerHTML = '<h3>>>> USER COMMENTS_</h3>'; 
@@ -295,60 +306,6 @@
             document.getElementById('modalTrailer').src = "";
             document.body.style.overflow = '';
         }
-    
-            function openModal(cardElement) {
-                // Grab basic data
-                const title = cardElement.getAttribute('data-title');
-                const rating = cardElement.getAttribute('data-rating');
-                const posterSrc = cardElement.getAttribute('data-poster');
-                const desc = cardElement.getAttribute('data-desc');
-                let trailerSrc = cardElement.getAttribute('data-trailer');
-    
-                // Add the YouTube API tag to the modal video so we can control it later
-                if (!trailerSrc.includes('enablejsapi=1')) {
-                    trailerSrc += (trailerSrc.includes('?') ? '&' : '?') + 'enablejsapi=1';
-                }
-                
-                // Inject basic data
-                document.getElementById('modalTitle').innerText = title;
-                document.getElementById('modalRating').innerText = rating;
-                document.getElementById('modalPoster').src = posterSrc;
-                document.getElementById('modalDescText').innerText = desc;
-                document.getElementById('modalTrailer').src = trailerSrc;
-        
-                // --- HANDLE DYNAMIC COMMENTS ---
-                const commentsContainer = document.getElementById('modalCommentsContainer');
-                // Clear the old comments and put the header back
-                commentsContainer.innerHTML = '<h3>>>> USER COMMENTS_</h3>'; 
-                
-                // Grab the JSON string and convert it into a JavaScript array
-                const commentsJSON = cardElement.getAttribute('data-comments');
-                if (commentsJSON) {
-                    const commentsArray = JSON.parse(commentsJSON);
-                    
-                    // Loop through each comment and add it to the page
-                    commentsArray.forEach(comment => {
-                        const p = document.createElement('p');
-                        p.innerHTML = `<strong>${comment.user}:</strong> ${comment.text}`;
-                        commentsContainer.appendChild(p);
-                    });
-                }
-        
-                // Always add the webmaster complaint at the very bottom
-                const webmasterP = document.createElement('p');
-                webmasterP.innerHTML = `<strong>Webmaster:</strong> Plz stop spamming my guestbook thx.`;
-                commentsContainer.appendChild(webmasterP);
-        
-                // Show modal
-                document.getElementById('movieModal').style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // <-- THIS LOCKS THE SCROLLING
-            }
-        
-            function closeModal() {
-                document.getElementById('movieModal').style.display = 'none';
-                document.getElementById('modalTrailer').src = "";
-                document.body.style.overflow = ''; // <-- THIS RESTORES THE SCROLLING
-            }
     </script>
 </body>
 </html>
