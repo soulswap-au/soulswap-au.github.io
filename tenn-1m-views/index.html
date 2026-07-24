@@ -225,11 +225,11 @@
             } while (newSong === currentSong && playlist.length > 1);
             
             currentSong = newSong;
-            audioPlayer.src = currentSong;
+            audioPlayer.src = currentSong.file;
 
             // Update the marquee text
-            const statusText = isPlaying ? "NOW PLAYING" : "TENN WAITING";
-            songMarquee.innerText = `>>> ${statusText}: ${currentSong.title} <<<`;
+            const statusText = isPlaying ? "NOW PLAYING: ${currentSong.title}"  : "TENN WAITING";
+            songMarquee.innerText = `>>> ${statusText} <<<`;
         }
     
             // loads a random song at page open
