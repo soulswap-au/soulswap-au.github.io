@@ -39,6 +39,12 @@
             
             <p>RADIO ROULETTE!!!</p>
             <!-- Hidden audio element (no 'controls' attribute) -->
+
+            <!-- New LCD Display -->
+            <div class="lcd-screen">
+                <marquee id="song-marquee" scrollamount="5" scrolldelay="100">LOADING TRACK...</marquee>
+            </div>
+            
             <audio id="chaos-radio"></audio>
     
             <!-- Custom button -->
@@ -203,12 +209,13 @@
         // --- CUSTOM RADIO SCRIPT ---
     
         const playlist = [
-                "audio/Freeze-Frame.mp3",
-                "audio/Azalea_HGA.mp3"
+                { file: "audio/Freeze-Frame.mp3", title: "Playing freezzee_frammmeee by Juan Gato..." },
+                { file: "audio/Freeze-Frame.mp3", title: "Playing hes_groovy_and_(neo) by Azalea..." },
             ];
     
         const audioPlayer = document.getElementById("chaos-radio");
         const playBtn = document.getElementById("retro-play-btn");
+        const songMarquee = document.getElementById("song-marquee");
         let currentSong = "";
     
         function swapToRandomSong() {
@@ -219,6 +226,10 @@
             
             currentSong = newSong;
             audioPlayer.src = currentSong;
+
+            // Update the marquee text
+            const statusText = isPlaying ? "NOW PLAYING" : "TENN WAITING";
+            songMarquee.innerText = `>>> ${statusText}: ${currentSong.title} <<<`;
         }
     
             // loads a random song at page open
@@ -229,13 +240,14 @@
             if (audioPlayer.paused) {
                 audioPlayer.play();
                 playBtn.innerText = "⏸ PAUSE";
-                playBtn.style.backgroundColor = "#ff0000"; // Turns red when playing
+                playBtn.style.backgroundColor = "#ff0000";
+                songMarquee.innerText = `>>> NOW PLAYING: ${currentSong.title} <<<`;
             } else {
                 audioPlayer.pause();
                 // loads a new track every time the audio is paused
                 swapToRandomSong();
                 playBtn.innerText = "▶ PLAY";
-                playBtn.style.backgroundColor = "#ff00ff"; // Turns pink when paused
+                playBtn.style.backgroundColor = "#ff00ff";
             }
         });
     
