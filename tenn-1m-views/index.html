@@ -36,10 +36,13 @@
         </div>
 
         <div class="audio-player">
+            
             <p>RADIO ROULETTE!!!</p>
-            <audio id="chaos-radio" controls controlsList="nodownload">
-                <!-- The source is intentionally empty; JavaScript will inject it -->
-                Your browser does not support the audio element.
+            <!-- Hidden audio element (no 'controls' attribute) -->
+            <audio id="chaos-radio"></audio>
+    
+            <!-- Custom button -->
+            <button id="retro-play-btn" class="retro-btn">▶ PLAY</button>
             </audio>
         </div>
         
@@ -197,20 +200,19 @@
         }
     </script>
     <script>
-        // --- CHAOS RADIO SCRIPT ---
+        // --- CUSTOM RADIO SCRIPT ---
     
         const playlist = [
-            "audio/Freeze-Frame.mp3",
-            "audio/Azalea_HGA.mp3"
-        ];
+                "audio/Freeze-Frame.mp3",
+                "audio/Azalea_HGA.mp3"
+            ];
     
         const audioPlayer = document.getElementById("chaos-radio");
+        const playBtn = document.getElementById("retro-play-btn");
         let currentSong = "";
     
         function swapToRandomSong() {
             let newSong = "";
-            
-            // Pick a random song, but ensure it's not the exact same one that just played
             do {
                 newSong = playlist[Math.floor(Math.random() * playlist.length)];
             } while (newSong === currentSong && playlist.length > 1);
@@ -219,14 +221,29 @@
             audioPlayer.src = currentSong;
         }
     
-        // loads a random song at page open
-        swapToRandomSong();
-    
-        // loads a new track every time the audio is paused
-        // (and triggers automatically when a song finishes playing)
-        audioPlayer.addEventListener("pause", function() {
+            // loads a random song at page open
             swapToRandomSong();
+    
+        // Toggle play/pause when the button is clicked
+        playBtn.addEventListener("click", function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playBtn.innerText = "⏸ PAUSE";
+                playBtn.style.backgroundColor = "#ff0000"; // Turns red when playing
+            } else {
+                audioPlayer.pause();
+                // loads a new track every time the audio is paused
+                swapToRandomSong();
+                playBtn.innerText = "▶ PLAY";
+                playBtn.style.backgroundColor = "#ff00ff"; // Turns pink when paused
+            }
         });
-</script>
+    
+        // (and triggers automatically when a song finishes playing)
+        audioPlayer.addEventListener("ended", function() {
+            swapToRandomSong();
+            audioPlayer.play();
+        });
+    </script>
 </body>
 </html>
