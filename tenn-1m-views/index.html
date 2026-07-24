@@ -209,8 +209,8 @@
         // --- CUSTOM RADIO SCRIPT ---
     
         const playlist = [
-                { file: "audio/Freeze-Frame.mp3", title: "Playing freezzee_frammmeee by Juan Gato..." },
-                { file: "audio/Azalea_HGA.mp3", title: "Playing hes_groovy_and_(neo) by Azalea..." },
+                { file: "audio/Freeze-Frame.mp3", title: "freezzee_frammmeee by Juan Gato" },
+                { file: "audio/Azalea_HGA.mp3", title: "hes_groovy_and_(neo) by Azalea" },
             ];
     
         const audioPlayer = document.getElementById("chaos-radio");
@@ -228,7 +228,7 @@
             audioPlayer.src = currentSong.file;
 
             // Update the marquee text
-            const statusText = isPlaying ? "NOW PLAYING: ${currentSong.title}"  : "TENN WAITING";
+            const statusText = isPlaying ? "PLAYING: ${currentSong.title}"  : "TENN WAITING";
             songMarquee.innerText = `>>> ${statusText} <<<`;
         }
     
@@ -241,7 +241,7 @@
                 audioPlayer.play();
                 playBtn.innerText = "⏸ PAUSE";
                 playBtn.style.backgroundColor = "#ff0000";
-                songMarquee.innerText = `>>> NOW PLAYING: ${currentSong.title} <<<`;
+                songMarquee.innerText = `>>> PLAYING: ${currentSong.title} <<<`;
             } else {
                 audioPlayer.pause();
                 // loads a new track every time the audio is paused
