@@ -466,7 +466,7 @@ footer {
     position: relative; 
     display: block;
     max-width: 400px; 
-    margin: 60px auto; 
+    margin: 120px auto; 
     text-align: center;
     cursor: pointer;
 }
@@ -479,11 +479,11 @@ footer {
 
 .mailroom-text {
     position: absolute;
-    top: 50%; 
-    left: 50%;
-    animation: zoomInOutText 3s ease-in-out infinite;    
+    top: -55%; 
+    left: 88%;
+    animation: zoomInOutText 2s ease-in-out infinite;    
     z-index: 10; 
-    width: 90%; 
+    width: 85%; 
     height: auto;
     display: block;
     border: none;
@@ -493,7 +493,8 @@ footer {
 
 .mailroom-door img {
     display: block;
-    width: 100%; 
+    width: 60%;
+    left: 25%;
     height: auto;
     position: relative;
     z-index: 1; 
