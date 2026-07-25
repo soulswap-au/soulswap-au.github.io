@@ -1,0 +1,461 @@
+@font-face {
+    font-family: '8bitOperatorPlus';
+    src: url('fonts/8bitOperatorPlus-Bold.eot') format('embedded-opentype'), url('fonts/8bitOperatorPlus-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block; /* Forcing the browser to wait for the font, should do WOFF2 instead */
+}
+
+/* Base retro setup */
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: '8bitOperatorPlus', monospace;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Chaotic Headers */
+h1 {
+    color: #ff00ff;
+    font-size: 3rem;
+    text-shadow: 2px 2px #fff;
+    animation: blink 0.5s infinite;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #ff0000;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Marquees */
+.fast-marquee {
+    color: #ffff00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #0000ff;
+    padding: 10px;
+}
+
+.emoji-marquee {
+    font-size: 2rem;
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Placeholders */
+.video-placeholder {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px dashed #ff00ff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* making sure the video adjust correctly */
+.video-placeholder iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    margin-bottom: 10px;
+    border: 1px solid #777;
+}
+
+/* Retro Audio Player Container */
+.audio-player {
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #111;
+    border: 4px dashed #00ffff; /* Neon cyan border */
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 5px 5px 0px #ff00ff; /* Chunky pink shadow */
+}
+
+.audio-player p {
+    color: #ffff00;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    animation: blink 1s infinite;
+}
+
+/* Force the player to fit the box and look a bit blockier */
+.audio-player audio {
+    width: 100%;
+    border-radius: 0; /* Removes modern rounded corners */
+    outline: 3px solid #00ff00; /* Neon green outline around the player */
+}
+
+/* Buttons and Links */
+.links-container {
+    margin: 30px 0;
+}
+
+.links-container a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 3px solid #fff;
+}
+
+.links-container a:hover {
+    background-color: #fff;
+    color: #00ff00;
+}
+
+/* Prize Grid Layout --- TO BE REMOVED --- */
+.prizes-section {
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 3px solid #ff0000;
+}
+
+.prizes-section h3 {
+    color: #00ffff;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+.prizes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.prize-card {
+    background-color: #111;
+    border: 2px solid #ffff00;
+    padding: 10px;
+}
+
+.prize-card p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* --- Movies Section (VHS / Retro Poster Vibe) --- */
+.movies-section {
+    margin-top: 40px;
+    background-color: #050510; /* Very dark blue background */
+    padding: 30px 20px;
+    border: 4px solid #ff00ff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.movies-section h3 {
+    color: #00ffff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px #ff00ff;
+}
+
+.movie-subtext {
+    color: #ffff00;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: blink 2s infinite;
+}
+
+.movies-grid {
+    display: grid;
+    /* Reduced min width to 160px, and capped max width at 220px to keep it small */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px)); 
+    gap: 50px; /* Increased space between cards (was 30px) */
+    justify-content: center; /* Keeps the smaller cards centered in the container */
+    padding: 20px 0;
+}
+
+/* The individual movie blocks */
+.movie-card {
+    background-color: #111;
+    border: 2px solid #333;
+    padding: 10px; /* Slightly reduced padding to match smaller cards */
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Hover effect to make them pop */
+.movie-card:hover {
+    transform: scale(1.05);
+    border-color: #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+/* Constrain the poster images to be 2:3 */
+.poster-container {
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    background-color: #222;
+    overflow: hidden;
+    border: 1px solid #555;
+}
+
+.poster-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the box without squishing */
+    filter: contrast(1.2) sepia(0.2); /* Gives images a slightly retro/worn tint */
+}
+
+/* The text below the poster */
+.movie-info {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.movie-info h4 {
+    color: #fff;
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.rating {
+    color: #aaa;
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: monospace;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #222;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* --- Modal Overlay & Content --- */
+.modal-overlay {
+    display: none; /* Keeps it hidden until clicked */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Darken the background */
+    z-index: 1000; /* Ensure it stays on top of everything */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Update the existing modal-content rule */
+.modal-content {
+    background: #050510;
+    border: 4px ridge #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px; /* Made wider to fit the video */
+    max-height: 85vh; /* Prevents from being taller than screen */
+    overflow-y: auto; /* Adds scrollbar if content is too long */
+    position: relative;
+    text-align: left;
+}
+
+/* Make the scrollbar look retro */
+.modal-content::-webkit-scrollbar {
+    width: 12px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: #111; 
+    border-left: 2px solid #00ffff;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #ff00ff; 
+}
+
+/* Style the video container to keep 16:9 ratio */
+.modal-video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+    border: 3px dashed #ff00ff;
+    background-color: #111;
+}
+
+.modal-video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    color: #ff00ff;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+}
+
+.modal-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-poster {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.modal-desc p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.modal-comments {
+    border-top: 2px dashed #ff00ff;
+    padding-top: 15px;
+}
+
+.modal-comments h3 {
+    color: #ffff00;
+    margin-top: 0;
+}
+
+.modal-comments p {
+    font-size: 1rem;
+    color: #0f0;
+    margin-bottom: 5px;
+}
+
+/* --- Internal Pages Content Box --- */
+.content-box {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 3px dashed #00ff00;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: left;
+    color: #fff;
+    box-shadow: 6px 6px 0px #ff0000;
+    font-size: 1.2rem;
+}
+
+.content-box h3 {
+    color: #ff00ff;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.retro-gif {
+    display: block;
+    margin: 30px auto;
+    max-width: 250px;
+    border: 2px solid #fff;
+}
+
+/* --- Custom Retro Audio Button --- */
+.retro-btn {
+    background-color: #ff00ff;
+    color: #000;
+    /* Inherits your 8bitOperatorPlus font */
+    font-family: inherit; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: 4px solid #fff;
+    cursor: pointer;
+    box-shadow: 6px 6px 0px #00ffff;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    margin-top: 10px;
+}
+
+/* Makes the button "press down" when clicked */
+.retro-btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0px #00ffff;
+}
+
+/* Remove the old default audio tag outline rule just in case */
+.audio-player audio {
+    display: none; 
+}
+
+/* --- Main Image Section --- */
+.main-image {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px 0;
+}
+
+.main-image p {
+    color: #ffffff; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px #ff0000;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: none; 
+    background-color: transparent;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: hoverFloat 4s ease-in-out infinite;
+}
+
+@keyframes hoverFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Moves up 15 pixels */
+    100% { transform: translateY(0px); }
+}

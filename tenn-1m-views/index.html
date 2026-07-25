@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENN: STAY TUNED</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <marquee class="fast-marquee">TENN 1M VIEWS!!! WE DID IT!!!!!!</marquee>
+        <h1>TENN: STAY TUNED!!!</h1>
+        <h2>IT'S SHOW TIME...</h2>
+    </header>
+
+    <main>
+        <!-- Video Area -->
+        <div class="video-placeholder">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/4nTyblfODQ4?si=CXuQwOd-WWY3C38A" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <div class="main-image">
+                        
+            <p> FINE! If you don't watch ME, I'll watch MYSELF! </p>
+            <div class="image-container">
+                <img src="images/watching_myself_fixed.png" alt="watching myself">
+            </div>
+        </div>
+
+
+        
+        <!-- Navigation Links -->
+        <div class="links-container">
+            <a href="about.html">ABOUT TENN</a>
+            <a href="credits.html">CREDITS</a>
+            <a href="behind-the-scenes.html">BEHIND THE SCENES</a>
+        </div>
+
+        <div class="audio-player">
+            
+            <p>RADIO ROULETTE!!!</p>
+            <!-- Hidden audio element (no 'controls' attribute) -->
+
+            <!-- New LCD Display -->
+            <div class="lcd-screen">
+                <marquee id="song-marquee" scrollamount="5" scrolldelay="100">LOADING TRACK...</marquee>
+            </div>
+            
+            <audio id="chaos-radio"></audio>
+    
+            <!-- Custom button -->
+            <button id="retro-play-btn" class="retro-btn">▶ PLAY</button>
+            </audio>
+        </div>
+        
+        <marquee class="emoji-marquee">SMILE AND SCREAM, ENTERTAINMENT ON YOUR SCREEN!</marquee>
+
+        <!-- Movie Posters Grid -->
+        <section class="movies-section">
+            <h3>NOW STREAMING...</h3>
+            <p class="movie-subtext">Click the posters and enjoy</p>
+            
+            <div class="movies-grid">
+                <!-- Movie 1 -->
+                <div class="movie-card" 
+                     onclick="openModal(this)"
+                     data-title="SON OF MAN"
+                     data-rating=" ★★★★☆ "
+                     data-poster="images/son_of_man.png"
+                     data-trailer="https://www.youtube.com/embed/fT5jOISvKWI" 
+                     data-desc="A man explores through time to become stronger and find answers about his world."
+                     data-comments='[
+                        {"user": "krizkroz", "text": "no idea about what happened there"},
+                        {"user": "NormalUser", "text": "A man for all to see."},
+                        {"user": "GaBoom", "text": "That was... somethin&#39;"}
+                     ]'>
+                    <div class="poster-container">
+                         <img src="images/son_of_man.png" alt="Son of Man">
+                    </div>
+                    <div class="movie-info">
+                        <h4>SON OF MAN</h4>
+                        <p class="rating"> ★★★★☆ </p>
+                    </div>
+                </div>
+            
+                <!-- Movie 2 -->
+                <div class="movie-card" 
+                     onclick="openModal(this)"
+                     data-title="A DARK ZONE"
+                     data-rating=" ★★★★★ "
+                     data-poster="images/a_dark_zone_poster.png"
+                     data-trailer=""
+                     data-desc="A small canine falls into a dark zone, searching for the light that will let them shine again. Instead, they awaken something bigger and scarier than they could imagine..."
+                     data-comments='[
+                        {"user": "cattipetti", "text": "Dark. Cool."},
+                        {"user": "GaBoom", "text": "One of the best films I&#39;ve seen in a long time! It&#39;ll definitely give me something to think about tonight."},
+                        {"user": "holiday_gurl", "text": "Someone made me watch this movie and I couldn&#39;t even last 10 minutes XP"}
+                     ]'>
+                    <div class="poster-container">
+                        <img src="images/a_dark_zone_poster.png" alt="a_dark_zone">
+                    </div>
+                    <div class="movie-info">
+                        <h4>A DARK ZONE</h4>
+                        <p class="rating"> ★★★★★ </p>
+                    </div>
+                </div>
+            
+                <!-- Movie 3 -->
+                <div class="movie-card" 
+                     onclick="openModal(this)"
+                     data-title="NEO"
+                     data-rating=" ★★☆☆☆ "
+                     data-poster="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007"
+                     data-trailer="" 
+                     data-desc="Description"
+                     data-comments='[
+                        {"user": "Username", "text": "Review"},
+                        {"user": "Username 2", "text": "Review 2"}
+                     ]'>
+                    <div class="poster-container">
+                        <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/JhwAAOSw3ohjRL9r/$_57.JPG?set_id=8800005007" alt="Neo">
+                    </div>
+                    <div class="movie-info">
+                        <h4>NEO</h4>
+                        <p class="rating"> ★★☆☆☆ </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>This site is part of a glitchy web ring!</p>
+    </footer>
+    <!-- The Scrollable Modal with Video -->
+    <div id="movieModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <div class="modal-header">
+                <img id="modalPoster" src="" alt="Movie Poster" class="modal-poster">
+                <div class="modal-desc">
+                    <h2 id="modalTitle">TITLE</h2>
+                    <p id="modalRating" class="rating">RATING</p>
+                    <p id="modalDescText">Description goes here...</p>
+                </div>
+            </div>
+    
+            <!-- New Video Section -->
+            <div class="modal-video-container">
+                <iframe id="modalTrailer" src="" title="Trailer" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
+            <div class="modal-comments" id="modalCommentsContainer">
+                <!-- The Javascript will inject the comments here -->
+            </div>
+        </div>
+    </div>
+    <script>
+    
+        // --- CUSTOM RADIO SCRIPT ---
+    
+        const playlist = [
+                { file: "audio/Freeze-Frame.mp3", title: "freezzee_frammmeee by Juan Gato" },
+                { file: "audio/Azalea_HGA.mp3", title: "hes_groovy_and_(neo) by Azalea" },
+                { file: "audio/Lost-Sanctuary.mp3", title: "lost_sanctuary by The JohnMusician"},
+                { file: "audio/tennvision(1997 version).m4a", title: "tennvision_(1997) by Cheezwiz"}    
+            ];
+    
+        const audioPlayer = document.getElementById("chaos-radio");
+        const playBtn = document.getElementById("retro-play-btn");
+        const songMarquee = document.getElementById("song-marquee");
+        let currentSong = "";
+    
+        function swapToRandomSong(isPlaying) {
+            let newSong = "";
+            do {
+                newSong = playlist[Math.floor(Math.random() * playlist.length)];
+            } while (newSong === currentSong && playlist.length > 1);
+            
+            currentSong = newSong;
+            audioPlayer.src = currentSong.file;
+
+            // Update the marquee text
+            const statusText = isPlaying ? `PLAYING: ${currentSong.title}`  : "TENN'S WAITING";
+            songMarquee.innerText = `>>> ${statusText} <<<`;
+        }
+    
+            // loads a random song at page open
+            swapToRandomSong(false);
+        
+        // Toggle play/pause when the button is clicked
+        playBtn.addEventListener("click", function() {
+            if (audioPlayer.paused) {
+                // STOP ALL YOUTUBE VIDEOS WHEN RADIO STARTS
+                document.querySelectorAll('iframe').forEach(iframe => {
+                    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo' }), '*');
+                });
+                audioPlayer.play();
+                playBtn.innerText = "⏸ PAUSE";
+                playBtn.style.backgroundColor = "#ff0000";
+                songMarquee.innerText = `>>> PLAYING: ${currentSong.title} <<<`;
+            } else {
+                audioPlayer.pause();
+                // loads a new track every time the audio is paused
+                swapToRandomSong(false);
+                playBtn.innerText = "▶ PLAY";
+                playBtn.style.backgroundColor = "#ff00ff";
+            }
+        });
+    
+        // (and triggers automatically when a song finishes playing)
+        audioPlayer.addEventListener("ended", function() {
+            swapToRandomSong(true);
+            audioPlayer.play();
+        });
+    
+        // --- MANAGE AUDIO CONFLICT ---
+    
+        // Enable the YouTube API on hardcoded videos when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('iframe').forEach(iframe => {
+                if (iframe.src.includes('youtube.com') && !iframe.src.includes('enablejsapi=1')) {
+                    iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                }
+            });
+        });
+    
+        // If the user clicks ANY video on the page, instantly pause the radio
+        window.addEventListener('blur', function() {
+            if (document.activeElement.tagName === 'IFRAME') {
+                if (!audioPlayer.paused) {
+                    audioPlayer.pause();
+                    playBtn.innerText = "▶ PLAY";
+                    playBtn.style.backgroundColor = "#ff00ff";
+                    songMarquee.innerText = `>>> RADIO PAUSED BY VIDEO <<<`;
+                }
+            }
+        });
+    
+        // --- MODALS ---
+        // ==========================================
+        function openModal(cardElement) {
+    
+            // Grab data
+            const title = cardElement.getAttribute('data-title');
+            const rating = cardElement.getAttribute('data-rating');
+            const posterSrc = cardElement.getAttribute('data-poster');
+            const desc = cardElement.getAttribute('data-desc');
+            let trailerSrc = cardElement.getAttribute('data-trailer');
+    
+            // Inject basic data
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalRating').innerText = rating;
+            document.getElementById('modalPoster').src = posterSrc;
+            document.getElementById('modalDescText').innerText = desc;
+
+            const trailerIframe = document.getElementById('modalTrailer');
+            const videoContainer = trailerIframe.parentElement; // Grabs the dashed box around the video
+                // Only append api if src exist
+                if (trailerSrc) {
+                    if (!trailerSrc.includes('enablejsapi=1')) {
+                        trailerSrc += (trailerSrc.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                    }
+                    trailerIframe.src = trailerSrc;
+                    videoContainer.style.display = 'block'; 
+                } else {
+                    trailerIframe.src = "";
+                    videoContainer.style.display = 'none'; 
+                }
+            
+            // Handle dynamic comments
+            const commentsContainer = document.getElementById('modalCommentsContainer');
+            commentsContainer.innerHTML = '<h3>>>> REVIEWS</h3>'; 
+            
+            const commentsJSON = cardElement.getAttribute('data-comments');
+            if (commentsJSON) {
+                const commentsArray = JSON.parse(commentsJSON);
+                commentsArray.forEach(comment => {
+                    const p = document.createElement('p');
+                    p.innerHTML = `<strong>${comment.user}:</strong> ${comment.text}`;
+                    commentsContainer.appendChild(p);
+                });
+            }
+    
+            const webmasterP = document.createElement('p');
+            webmasterP.innerHTML = `<strong>Webmaster:</strong> Plz stop spamming my guestbook thx.`;
+            commentsContainer.appendChild(webmasterP);
+    
+            // Show modal & freeze background scroll
+            document.getElementById('movieModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    
+        function closeModal() {
+            document.getElementById('movieModal').style.display = 'none';
+            document.getElementById('modalTrailer').src = "";
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>
