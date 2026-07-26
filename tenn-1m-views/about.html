@@ -23,10 +23,7 @@
 
         .about-image { 
             width: 80%; 
-            max-width: 500px;
-            border: 6px dashed #00ffff; 
-            box-shadow: 10px 10px 0px #ff00ff; 
-            margin: 30px 0; 
+            max-width: 300px;
         }
 
         .inline-image-text { 
@@ -37,10 +34,8 @@
         }
         .inline-image-text img { 
             vertical-align: middle; 
-            max-height: 120px; 
-            border: 4px solid #ffaa00; 
+            max-height: 80px; 
             margin: 0 15px; 
-            animation: spinGently 6s linear infinite;
         }
 
         .dramatic-text { 
@@ -52,20 +47,16 @@
         .missing-text { 
             font-size: 2.5rem; 
             color: #ff0000; 
-            text-decoration: underline; 
-            text-decoration-style: wavy;
-            text-decoration-color: #00ffff;
             margin-bottom: 40px;
         }
 
-        /* The escalating STAY TUNED text */
         .stay-tuned-1 { font-size: 2rem; color: #00ffff; margin: 10px 0; }
         .stay-tuned-2 { font-size: 4rem; color: #ff00ff; text-shadow: 3px 3px #fff; margin: 10px 0; }
         .stay-tuned-3 { 
             font-size: 6rem; 
             color: #ff0000; 
             text-shadow: 5px 5px #ffaa00; 
-            animation: zoomInOutText 0.5s infinite; /* Extremely fast pulse! */
+            animation: zoomInOutText 0.5s infinite;
             margin: 10px 0; 
         }
         .please-text { 
@@ -78,10 +69,6 @@
             0% { transform: translate(2px, 2px) rotate(0deg); }
             50% { transform: translate(-2px, -2px) rotate(-1deg); }
             100% { transform: translate(2px, -2px) rotate(1deg); }
-        }
-        @keyframes spinGently {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
