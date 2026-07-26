@@ -4,12 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailroom</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+        }
+        .empty-space {
+            height: 300vh; 
+        }
+        .secret-text {
+            text-align: center;
+            padding-bottom: 50px;
+            font-size: 1.5rem;
+        }
+        ::selection {
+            background-color: #00ff00;
+            color: #000000;
+        }
+        ::-webkit-scrollbar {
+            width: 24px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #111;
+            border-left: 2px dashed #444;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff00ff;
+            border: 2px solid #111; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ffff;
+        }
+    </style>
 </head>
 <body>
   
     <main>
-        <div>
+        <div class="empty-space"></div>
+        <div class="secret-text">
             <h3>IT’S ALL FINE, WE DON’T NEED A MAIL GUY.</h3>
         </div>
     </main>
