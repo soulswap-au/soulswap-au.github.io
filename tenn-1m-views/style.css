@@ -380,7 +380,6 @@ footer {
     box-shadow: 6px 6px 0px #ff0000;
     font-size: 1.2rem;
 }
-
 .content-box h3 {
     color: #ff00ff;
     text-decoration: underline;
@@ -388,19 +387,16 @@ footer {
     font-size: 2rem;
     margin-top: 0;
 }
-
 .retro-gif {
     display: block;
     margin: 30px auto;
     max-width: 250px;
     border: 2px solid #fff;
 }
-
-/* --- Custom Retro Audio Button --- */
 .retro-btn {
     background-color: #ff00ff;
     color: #000;
-    /* Inherits your 8bitOperatorPlus font */
+    /* Inherits 8bitOperatorPlus font */
     font-family: inherit; 
     font-size: 1.5rem;
     font-weight: bold;
@@ -412,13 +408,10 @@ footer {
     transition: all 0.1s;
     margin-top: 10px;
 }
-
-/* Makes the button "press down" when clicked */
 .retro-btn:active {
     transform: translate(6px, 6px);
     box-shadow: 0px 0px 0px #00ffff;
 }
-
 /* Remove the old default audio tag outline rule just in case */
 .audio-player audio {
     display: none; 
@@ -430,7 +423,6 @@ footer {
     margin-top: 80px;
     margin-bottom: 40px 0;
 }
-
 .main-image p {
     color: #ffffff; 
     font-size: 1.5rem;
@@ -438,7 +430,6 @@ footer {
     text-shadow: 2px 2px #ff0000;
     margin-bottom: 30px;
 }
-
 .image-container {
     width: 95%;
     max-width: 600px;
@@ -446,14 +437,12 @@ footer {
     border: none; 
     background-color: transparent;
 }
-
 .image-container img {
     width: 100%;
     height: auto;
     display: block;
     animation: hoverFloat 4s ease-in-out infinite;
 }
-
 @keyframes hoverFloat {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); } /* Moves up 15 pixels */
@@ -470,13 +459,11 @@ footer {
     text-align: center;
     cursor: pointer;
 }
-
 @keyframes zoomInOutText {
     0% { transform: translate(-50%, -10px) rotate(-3deg) scale(1); }
     50% { transform: translate(-50%, -10px) rotate(-3deg) scale(1.15); } /* Zooms in by 15% */
     100% { transform: translate(-50%, -10px) rotate(-3deg) scale(1); }
 }
-
 .mailroom-text {
     position: absolute;
     top: -55%; 
@@ -490,7 +477,6 @@ footer {
     background: transparent;
     pointer-events: none;
 }
-
 .mailroom-door img {
     display: block;
     width: 60%;
@@ -498,4 +484,48 @@ footer {
     height: auto;
     position: relative;
     z-index: 1; 
+}
+/* --- Radio Banner --- */
+.roulette-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a001a;
+    border: 6px ridge #ff00ff;
+    margin: 30px auto;
+    padding: 15px;
+    max-width: 700px; 
+    box-shadow: 5px 5px 0px #00ffff;
+}
+.side-gif {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 2px dotted #ffff00;
+    background-color: #000;
+}
+.funny-text {
+    text-align: center;
+    flex-grow: 1;
+    padding: 0 15px;
+}
+.funny-text h3 {
+    color: #ff0000;
+    font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px #ffff00;
+    
+    animation: retroBlink 1s step-end infinite;
+}
+.funny-text p {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+}
+@keyframes retroBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
