@@ -59,8 +59,7 @@
         }
         .inline-icon {
             height: 70px;
-            margin: 0 15px;
-            animation: retroBlink 0.85s step-end infinite; 
+            margin: -10px 15px;
         }
         .angry-text {
             font-size: 3.5rem;
@@ -88,22 +87,19 @@
             display: inline-block;
             padding-bottom: 5px;
         }
-        .video-link {
-            display: inline-block;
-            font-size: 1.8rem;
-            color: #00ffff;
-            background: #111;
-            padding: 15px 25px;
-            border: 2px dashed #00ffff;
-            text-decoration: none;
-            margin: 20px 0;
-            transition: all 0.2s;
+        .video-container {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
         }
-        .video-link:hover { 
-            background: #00ffff; 
-            color: #000; 
-            border-style: solid;
+        .retro-video-player {
+            width: 100%;
+            height: auto;
+            border: 6px ridge #00ffff; 
+            box-shadow: 10px 10px 0px #ff00ff; 
+            background-color: #000; 
         }
+        
         /* Giant Back Button */
         .retro-back-btn {
             display: inline-block;
@@ -156,7 +152,8 @@
         <p class="dramatic-bts">BELIEVE IT OR NOT, I USED TO LOOK LIKE THIS, FOLKS!!!</p>
         
         <div class="inline-text-row">
-            SO <img src="images/big.png" alt="BIG" class="inline-icon">, SO HANDSOME… I EVEN HAD TWO FULLY FUNCTIONAL LEGS!!
+            SO <img src="images/big.png" alt="BIG" class="inline-icon" style="animation: retroBlink 0.85s step-end infinite;">
+            , SO HANDSOME… I EVEN HAD TWO FULLY FUNCTIONAL LEGS!!
         </div>
         
         <img src="images/tenn_wheels.png" alt="Wheels Design" class="bts-image">
@@ -180,9 +177,11 @@
         <img src="images/omega_3d.png" alt="3D Model Phase 1" class="bts-image">
         
         <p class="caption-text">(Unedited 3D model by Jel)</p><br>
-        <a href="https://drive.google.com/file/d/10vObVRWVHgwmcSCYPRXlJhlKLOwZX-7o/view?usp=sharing" target="_blank" class="video-link">
-            ▶ omega.mp4
-        </a><br>
+        <div class="video-container">
+            <video controls class="retro-video-player">
+                <source src="https://raw.githubusercontent.com/soulswap-au/soulswap-au.github.io/main/tenn-1m-views/images/omega.mp4" type="video/mp4">
+            </video>
+        </div><br>
         
         <p class="caption-text">OMEGA TENN art by Idraws</p><br>
         <img src="images/idraws_omega_concept.png" alt="OMEGA TENN Art" class="bts-image"> <br>
