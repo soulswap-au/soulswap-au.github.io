@@ -2,40 +2,198 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEHIND THE SCENES</title>
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .bts-container {
+            text-align: center;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .header-bts { 
+            font-size: 3.5rem; 
+            color: #00ffff; 
+            text-shadow: 4px 4px 0px #ff00ff; 
+            text-transform: uppercase;
+            animation: floatText 3s ease-in-out infinite; 
+            margin-bottom: 5px;
+        }
+        .magic-text {
+            font-size: 1.5rem;
+            color: #ffff00;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+        .bts-image { 
+            width: 90%; 
+            max-width: 600px;
+            border: 5px outset #ff00ff; 
+            box-shadow: 8px 8px 0px #00ffff; 
+            margin: 20px 0; 
+            background-color: #000;
+        }
+        .dramatic-bts {
+            font-size: 1.8rem;
+            color: #00ff00;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        .inline-text-row {
+            font-size: 2.2rem;
+            color: #ffaa00;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-shadow: 2px 2px #000;
+        }
+        .inline-icon {
+            height: 70px;
+            margin: 0 15px;
+            border: 2px dashed #00ffff;
+            animation: retroBlink 2s step-end infinite; 
+        }
+        .angry-text {
+            font-size: 3.5rem;
+            color: #ff0000;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 3px 3px #fff, -2px -2px #ffff00;
+            animation: jitter 0.1s infinite; 
+            margin: 40px 0;
+            line-height: 1.1;
+        }
+        .rant-text {
+            font-size: 2rem;
+            color: #ff00ff;
+            margin: 30px 0;
+            line-height: 1.4;
+        }
+        .caption-text {
+            font-size: 1.2rem;
+            color: #aaaaaa;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-bottom: 1px solid #444;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .video-link {
+            display: inline-block;
+            font-size: 1.8rem;
+            color: #00ffff;
+            background: #111;
+            padding: 15px 25px;
+            border: 2px dashed #00ffff;
+            text-decoration: none;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            transition: all 0.2s;
+        }
+        .video-link:hover { 
+            background: #00ffff; 
+            color: #000; 
+            border-style: solid;
+        }
+        /* Giant Back Button */
+        .retro-back-btn {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 15px 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border: 6px ridge #ffff00;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            transition: transform 0.2s;
+        }
+        .retro-back-btn:hover {
+            transform: scale(1.1);
+            background-color: #ffff00;
+            color: #ff0000;
+            border-color: #ff0000;
+        }
+        /* Animations */
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes jitter {
+            0% { transform: translate(3px, 3px); }
+            50% { transform: translate(-3px, -3px); }
+            100% { transform: translate(3px, -3px); }
+        }
+        
+        @keyframes retroBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <marquee class="fast-marquee" style="background-color: #ff0000; color: #fff;">THE MAGIC BEHIND TENN...</marquee>
-        <h1 style="color: #00ffff;">BEHIND THE SCENES</h1>
-    </header>
+<body class="retro-body">
 
-    <main>
-        <div class="links-container">
-            <a href="index.html"><<< BACK TO MAIN</a>
+    <div class="bts-container">
+        
+        <h1 class="header-bts">BEHIND THE SCENES…</h1>
+        <p class="magic-text">THIS IS WHERE THE MAGIC HAPPENS…</p>
+        
+        <img src="images/original_tenn.png" alt="First Design" class="bts-image">
+        
+        <p class="dramatic-bts">AH, YES.</p>
+        <p class="dramatic-bts">MY FIRST DESIGN!</p>
+        <p class="dramatic-bts">BELIEVE IT OR NOT, I USED TO LOOK LIKE THIS, FOLKS!!!</p>
+        
+        <div class="inline-text-row">
+            SO <img src="images/big.png" alt="BIG" class="inline-icon">, SO HANDSOME… I EVEN HAD TWO FULLY FUNCTIONAL LEGS!!
+        </div>
+        
+        <img src="images/tenn_wheels.png" alt="Wheels Design" class="bts-image">
+        
+        <p class="dramatic-bts" style="color: #666;">…</p>
+        <p class="rant-text">THEN HE DID THIS TO ME...</p>
+        
+        <p class="angry-text">WHEELS. JUST… WHEELS.</p>
+        
+        <div class="inline-text-row" style="color: #ff0000; font-weight: bold; font-size: 2.8rem;">
+            WHERE ARE MY ARMS!? WHERE ARE MY <img src="images/text_legs.png" alt="LEGS" class="inline-icon">
+        </div>
+        
+        <p class="dramatic-bts" style="margin-top: 50px;">ANYWAY…</p>
+        <p class="rant-text" style="color: #00ffff;">HERE YOU CAN TAKE A LOOK AT SOME OF THE EARLY CONCEPTS, SCRAPPED IDEAS, AND ATTACK CONCEPTS CREATED FOR MY BEST, MOST MARVELOUS AND LEAST GLOOBY FORM YET!!</p>
+        
+        <p class="caption-text">(First OMEGA TENN concept by El Gato Juan)</p><br>
+        <img src="images/first_omega_concept.png" alt="OMEGA TENN Concept" class="bts-image">
+        
+        <p class="caption-text">(Initial phases of the 3D model by Jel)</p><br>
+        <img src="images/omega_3d.png" alt="3D Model Phase 1" class="bts-image">
+        
+        <p class="caption-text">(Unedited 3D model by Jel)</p><br>
+        <a href="https://drive.google.com/file/d/10vObVRWVHgwmcSCYPRXlJhlKLOwZX-7o/view?usp=sharing" target="_blank" class="video-link">
+            ▶ omega.mp4
+        </a><br>
+        
+        <p class="caption-text">OMEGA TENN art by Idraws</p><br>
+        <img src="images/idraws_omega_concept.png" alt="OMEGA TENN Art" class="bts-image">
+        
+        <p class="caption-text">Attack ideas by Idraws</p><br>
+        <img src="images/idraws_attack_1.png" alt="Attack Concept 1" class="bts-image">
+        <img src="images/idraws_attack_2.png" alt="Attack Concept 2" class="bts-image">
+        <img src="images/idraws_attack_3.png" alt="Attack Concept 3" class="bts-image">
+        
+        <div>
+            <a href="index.html" class="retro-back-btn">BACK</a>
         </div>
 
-        <div class="content-box" style="border-color: #ffff00; box-shadow: 6px 6px 0px #0000ff;">
-            <h3 style="color: #ff0000;">THE BIRTH OF A STAR</h3>
-            
-            <p>Spamager killed me, but thanks to this wheel, I survived!</p>
+    </div>
 
-            <div class="image-placeholder" style="height: 200px; border: 2px dashed #ffff00; margin: 20px 0;">
-                [BEHIND THE SCENES PHOTO 1]
-            </div>
-
-            <p>NEVER GLOOBY!</p>
-
-            <img src="https://media.giphy.com/media/MM0J1ZbFcToNW/giphy.gif" alt="Crazy glitch" class="retro-gif" style="max-width: 150px;">
-
-            <div class="image-placeholder" style="height: 200px; border: 2px dashed #ffff00; margin: 20px 0;">
-                [BEHIND THE SCENES PHOTO 2]
-            </div>
-            
-            <p>Who needs arms with a wheel like this?</p>
-        </div>
-    </main>
 </body>
 </html>
