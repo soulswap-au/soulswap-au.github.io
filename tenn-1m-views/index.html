@@ -86,14 +86,17 @@
                 <div class="movie-card" 
                      onclick="openModal(this)"
                      data-title="SON OF MAN"
-                     data-rating=" ★★★★☆ "
+                     data-rating=" ★★☆☆☆ "
                      data-poster="images/son_of_man.png"
                      data-trailer="https://www.youtube.com/embed/fT5jOISvKWI" 
-                     data-desc="A man explores through time to become stronger and find answers about his world."
+                     data-desc="A young traveler sets out on a journey through the forest to find the power and freedom he has always dreamed of."
                      data-comments='[
                         {"user": "krizkroz", "text": "no idea about what happened there"},
-                        {"user": "NormalUser", "text": "A man for all to see."},
+                        {"user": "NormalUser", "text": "A man for all. To see."},
                         {"user": "GaBoom", "text": "That was... somethin&#39;"}
+                        {"user": "Frog", "text": "Ribbit ribbit (The butterflies scene was unsettling.)"},
+                        {"user": "Monsterakid", "text": "For a second, I thought someone else was sitting in my seat. Ha, ha... It was probably just dark."},
+
                      ]'>
                     <div class="poster-container">
                          <img src="images/son_of_man.png" alt="Son of Man">
@@ -305,7 +308,7 @@
             
             // Handle dynamic comments
             const commentsContainer = document.getElementById('modalCommentsContainer');
-            commentsContainer.innerHTML = '<h3>>>> REVIEWS</h3>'; 
+            commentsContainer.innerHTML = '<h3>>>> AUDIENCE REVIEWS</h3>'; 
             
             const commentsJSON = cardElement.getAttribute('data-comments');
             if (commentsJSON) {
@@ -317,9 +320,9 @@
                 });
             }
     
-            const webmasterP = document.createElement('p');
-            webmasterP.innerHTML = `<strong>Webmaster:</strong> Plz stop spamming my guestbook thx.`;
-            commentsContainer.appendChild(webmasterP);
+            const danceboyP = document.createElement('p');
+            danceboyP.innerHTML = `<strong>dance_boy:</strong> Plz stop spamming my guestbook thx.`;
+            commentsContainer.appendChild(danceboyP);
     
             // Show modal & freeze background scroll
             document.getElementById('movieModal').style.display = 'flex';
