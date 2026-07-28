@@ -528,3 +528,15 @@ footer {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+.distortion-effect {
+    pointer-events: none; 
+    animation: distortionWarp 5s ease-in-out forwards;
+}
+@keyframes distortionWarp {
+    0% { filter: grayscale(0%) blur(0px) contrast(100%); transform: scale(1) rotate(0deg); }
+    10% { filter: grayscale(100%) blur(1px) contrast(150%); transform: scale(1.02) rotate(1deg); }
+    50% { filter: grayscale(100%) blur(3px) contrast(200%); transform: scale(1.05) rotate(-2deg); }
+    90% { filter: grayscale(100%) blur(1px) contrast(150%); transform: scale(1.01) rotate(1deg); }
+    100% { filter: grayscale(0%) blur(0px) contrast(100%); transform: scale(1) rotate(0deg); }
+}
