@@ -547,8 +547,8 @@ footer {
 /* Fix for mobile horizontal overflow in mailroom */
 @media (max-width: 480px) {
     .mailroom-text {
-        left: 70%; 
-        width: 75%; 
+        left: 60%; 
+        width: 65%; 
     }
 }
 
