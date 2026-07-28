@@ -15,6 +15,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Chaotic Headers */
@@ -455,7 +457,8 @@ footer {
 .mailroom {
     position: relative; 
     display: block;
-    max-width: 400px; 
+    width: 100%;
+    max-width: 400px;
     margin-top: 150px;
     margin-bottom: 120px;
     margin-inline: auto;
@@ -540,3 +543,13 @@ footer {
     90% { filter: grayscale(100%) blur(1px) contrast(150%); transform: scale(1.01) rotate(1deg); }
     100% { filter: grayscale(0%) blur(0px) contrast(100%); transform: scale(1) rotate(0deg); }
 }
+
+/* Fix for mobile horizontal overflow in mailroom */
+@media (max-width: 480px) {
+    .mailroom-text {
+        left: 70%; 
+        width: 75%; 
+    }
+}
+
+
