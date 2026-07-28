@@ -114,7 +114,7 @@
                      data-rating=" ★★★★★ "
                      data-poster="images/a_dark_zone_poster.png"
                      data-trailer=""
-                     data-desc="A small canine falls into a dark zone, searching for the light that will make them shine again. Instead, they awaken something bigger and scarier than they could have ever imagined."
+                     data-desc="A <a href='scair_e.html'> small canine </a> falls into a dark zone, searching for the light that will make them shine again. Instead, they awaken something bigger and scarier than they could have ever imagined."
                      data-comments='[
                         {"user": "cattipetti", "text": "Dark. Cool."},
                         {"user": "GaBoom", "text": "One of the best films I&#39;ve seen in a long time! It&#39;ll definitely give me something to think about tonight."},
@@ -335,7 +335,7 @@
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalRating').innerText = rating;
             document.getElementById('modalPoster').src = posterSrc;
-            document.getElementById('modalDescText').innerText = desc;
+            document.getElementById('modalDescText').innerHTML = desc;
 
             const trailerIframe = document.getElementById('modalTrailer');
             const videoContainer = trailerIframe.parentElement; // Grabs the dashed box around the video
