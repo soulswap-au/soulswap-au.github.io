@@ -6,6 +6,14 @@
     font-display: block; /* Forcing the browser to wait for the font, should do WOFF2 instead */
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw; 
+    position: relative; 
+    overscroll-behavior-x: none; 
+}
+
 /* Base retro setup */
 body {
     background-color: #000;
