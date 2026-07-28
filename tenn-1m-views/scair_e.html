@@ -9,8 +9,6 @@
         .scrolling-container {
             width: 100%;
             margin: 60px 0;
-            border-top: 5px dashed #ff00ff;
-            border-bottom: 5px dashed #ff00ff;
             background-color: #000;
         }
 
@@ -30,7 +28,6 @@
 
         /* Bottom row moves Right */
         .row-right {
-            border-top: 3px solid #00ffff; 
             animation: scrollRight 3s linear infinite;
         }
 
@@ -44,22 +41,12 @@
             from { background-position: 0px 0; }
             to { background-position: 270px 0; } 
         }
-        
-        .scair-title {
-            text-align: center;
-            font-size: 3rem;
-            color: #00ffff;
-            text-shadow: 3px 3px #ff0000;
-            margin-top: 40px;
-            animation: retroBlink 0.5s step-end infinite;
-        }
+
     </style>
 </head>
 <body class="retro-body">
 
     <audio src="audio/scary_scary.m4a" autoplay loop id="bg-music"></audio>
-
-    <h1 class="scair-title">>>> Boooooo Dancing..... !!! <<<</h1>
 
     <div class="scrolling-container">
         <div class="scrolling-row row-left"></div>
