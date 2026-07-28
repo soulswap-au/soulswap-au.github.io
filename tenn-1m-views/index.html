@@ -381,14 +381,14 @@
         }
         function triggerAnimation() {
             const closeBtn = document.getElementById('modalCloseBtn');
+            const modalBox = closeBtn.parentElement;
             
-            document.body.classList.add('distortion-effect');
+            modalBox.classList.add('distortion-effect');
             closeBtn.style.display = 'none';
             
             setTimeout(() => {
                 document.body.classList.remove('distortion-effect');
                 closeBtn.style.display = 'block';
-                document.body.style.pointerEvents = 'auto'; 
             }, 5000);
         }
     </script>
