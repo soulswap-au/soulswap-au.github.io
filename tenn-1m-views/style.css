@@ -294,8 +294,10 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
-/* Update the existing modal-content rule */
+.modal-wrapper {
+    position: relative; /* Acts as the anchor point */
+    display: inline-block;
+}
 .modal-content {
     background: #050510;
     border: 4px ridge #00ffff;
@@ -308,7 +310,6 @@ footer {
     position: relative;
     text-align: left;
 }
-
 /* Make the scrollbar look retro */
 .modal-content::-webkit-scrollbar {
     width: 12px;
@@ -330,13 +331,13 @@ footer {
 }
 
 .gif-top-right {
-    top: -20px;
+    top: -30px;
     right: -120px;
     transform: rotate(15deg); 
 }
 
 .gif-bottom-left {
-    bottom: -20px;
+    bottom: -30px;
     left: -120px;
     transform: rotate(-15deg);
 }
