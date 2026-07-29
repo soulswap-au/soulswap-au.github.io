@@ -89,6 +89,8 @@
                      data-title="SON OF MAN"
                      data-rating=" ★★☆☆☆ "
                      data-poster="images/son_of_man.png"
+                     data-upper-gif="images/forest_man.gif"
+                     data-lower-gif="images/forest_man.gif"
                      data-trailer="https://www.youtube.com/embed/fT5jOISvKWI" 
                      data-desc="A young traveler sets out on a journey through the forest to find the power and freedom he has always dreamed of."
                      data-comments='[
@@ -223,6 +225,8 @@
     <!-- The Scrollable Modal with Video -->
     <div id="movieModal" class="modal-overlay">
         <div class="modal-content">
+            <img id="modalUpperGif" src="" alt="Top Right" class="modal-floating-gif gif-top-right" style="display: none;">
+            <img id="modalLowerGif" src="" alt="Bottom Left" class="modal-floating-gif gif-bottom-left" style="display: none;">
             <span class="close-btn" id="modalCloseBtn" onclick="closeModal()">&times;</span>
             
             <div class="modal-header">
@@ -336,6 +340,9 @@
             const posterSrc = cardElement.getAttribute('data-poster');
             const desc = cardElement.getAttribute('data-desc');
             let trailerSrc = cardElement.getAttribute('data-trailer');
+
+            const upperGifSrc = cardElement.getAttribute('data-upper-gif');
+            const lowerGifSrc = cardElement.getAttribute('data-lower-gif');
     
             // Inject basic data
             document.getElementById('modalTitle').innerText = title;
@@ -343,6 +350,24 @@
             document.getElementById('modalPoster').src = posterSrc;
             document.getElementById('modalDescText').innerHTML = desc;
 
+            const upperGifEl = document.getElementById('modalUpperGif');
+            if (upperGifSrc) {
+                upperGifEl.src = upperGifSrc;
+                upperGifEl.style.display = 'block'; 
+            } else {
+                upperGifEl.src = "";
+                upperGifEl.style.display = 'none'; 
+            }
+
+            const lowerGifEl = document.getElementById('modalLowerGif');
+            if (lowerGifSrc) {
+                lowerGifEl.src = lowerGifSrc;
+                lowerGifEl.style.display = 'block';
+            } else {
+                lowerGifEl.src = "";
+                lowerGifEl.style.display = 'none';
+            }
+            
             const trailerIframe = document.getElementById('modalTrailer');
             const videoContainer = trailerIframe.parentElement; // Grabs the dashed box around the video
                 // Only append api if src exist
