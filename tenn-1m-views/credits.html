@@ -20,6 +20,7 @@
             color: #ffffff;
             margin-bottom: 20px;
             letter-spacing: 2px;
+            animation: blink 1s infinite;
         }
 
         .credits-intro {
@@ -63,29 +64,33 @@
             color: #ffffff;
             text-decoration: underline;
         }
-
+        
         .credits-back-btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 10px 30px;
-            background-color: #333;
+            background-color: #ff0000;
             color: #fff;
+            padding: 15px 50px;
+            font-size: 2rem;
+            font-weight: bold;
             text-decoration: none;
-            border: 1px solid #fff;
-            font-size: 1.2rem;
-            transition: all 0.2s ease;
+            border: 6px ridge #ffff00;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            transition: transform 0.2s;
         }
 
         .credits-back-btn:hover {
-            background-color: #fff;
-            color: #000;
+            transform: scale(1.1);
+            background-color: #ffff00;
+            color: #ff0000;
+            border-color: #ff0000;
         }
         
         .main-image {
             max-width: 100%;
-            height: auto;
+            height: 90px;
+            width:auto;
             margin: 20px 0;
-            border: 1px solid #555;
         }
     </style>
 </head>
@@ -95,12 +100,11 @@
         
         <h1 class="credits-header">CREDITS</h1>
         
-        <!-- Top Image Placeholder -->
-        <img src="images/hall_of_fame.png" alt="Credits Header" class="main-image">
+        <img src="images/hall_of_fame.png" alt="Hall of Fame" class="main-image">
         
         <div class="credits-intro">
             <p>AND NOW...</p>
-            <p>A ROUND OF APPLAUSE FOR THE <img src="images/stars.png" alt="Icon"> WHO MADE TONIGHT'S SHOW POSSIBLE!!</p>
+            <p>A ROUND OF APPLAUSE FOR THE <img src="images/stars.png" alt="STARS"> WHO MADE TONIGHT'S SHOW POSSIBLE!!</p>
         </div>
 
         <ul class="credits-list">
