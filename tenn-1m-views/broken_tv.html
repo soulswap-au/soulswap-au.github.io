@@ -26,17 +26,20 @@
             box-sizing: border-box;
         }
 
-        .empty-frame {
-            width: 100%;
-            height: 300px;
-            border: 1px solid #ffffff;
+        .modal-top {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            color: #ffffff;
-            letter-spacing: 2px;
+            gap: 20px;
+            min-height: 220px; 
         }
+
+        .poster-placeholder {
+            width: 150px;
+            height: 220px;
+            border: 2px solid #ffffff; 
+            background-color: #000000;
+            flex-shrink: 0; 
+        }
+        
         .white-separator {
             border: 0;
             border-top: 1px dashed #ffffff;
@@ -46,14 +49,12 @@
             font-size: 1rem;
             line-height: 1.5;
         }
-        .comment-user {
-            font-weight: bold;
-            color: #00dd00;
-        }
-        .comment-text {
+
+        .retro-comment {
             color: #00ff00;
-            margin-top: 10px;
-            white-space: pre-wrap; 
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
         }
     </style>
 </head>
@@ -61,18 +62,13 @@
 
     <div class="isolated-modal">
         
-        <div class="empty-frame">
-            [ MEDIA UNAVAILABLE ]
+        <div class="modal-top">
+            <div class="poster-placeholder"></div>
         </div>
         
         <hr class="white-separator">
 
-        <div class="comment-container">
-            <span class="comment-user">krizkroz:</span>
-            <div class="comment-text">i remember watching this movie in class multiple times because it was the cheapest movie my cheap ass school would rent </3
-
-movie sucks btw, im SO glad my schools shitty tv broke lol. they keep it in the library now</div>
-        </div>
+        <p class="retro-comment"><strong>krizkroz:</strong> i remember watching this movie in class multiple times because it was the cheapest movie my cheap ass school would rent &lt;/3<br><br>movie sucks btw, im SO glad my schools shitty tv broke lol. they keep it in the library now</p>
 
     </div>
 
