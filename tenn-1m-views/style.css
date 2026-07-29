@@ -325,19 +325,19 @@ footer {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    z-index: 100; 
+    z-index: 2000; 
     pointer-events: none; 
 }
 
 .gif-top-right {
-    top: -90px;
-    right: -90px;
+    top: -20px;
+    right: -120px;
     transform: rotate(15deg); 
 }
 
 .gif-bottom-left {
-    bottom: -90px;
-    left: -90px;
+    bottom: -20px;
+    left: -120px;
     transform: rotate(-15deg);
 }
 
