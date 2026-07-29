@@ -224,9 +224,13 @@
     </div>    
     <!-- The Scrollable Modal with Video -->
     <div id="movieModal" class="modal-overlay">
+        <div class="modal-wrapper">
+            
+        <img id="modalUpperGif" src="" alt="Top Right" class="modal-floating-gif gif-top-right" style="display: none;">
+        <img id="modalLowerGif" src="" alt="Bottom Left" class="modal-floating-gif gif-bottom-left" style="display: none;">
+            
         <div class="modal-content">
-            <img id="modalUpperGif" src="" alt="Top Right" class="modal-floating-gif gif-top-right" style="display: none;">
-            <img id="modalLowerGif" src="" alt="Bottom Left" class="modal-floating-gif gif-bottom-left" style="display: none;">
+        
             <span class="close-btn" id="modalCloseBtn" onclick="closeModal()">&times;</span>
             
             <div class="modal-header">
