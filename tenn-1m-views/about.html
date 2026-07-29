@@ -65,6 +65,25 @@
             margin-top: 40px; 
             font-family: 'Courier New', Courier, monospace; 
         }
+        .retro-back-btn {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 15px 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border: 6px ridge #ffff00;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            transition: transform 0.2s;
+        }
+        .retro-back-btn:hover {
+            transform: scale(1.1);
+            background-color: #ffff00;
+            color: #ff0000;
+            border-color: #ff0000;
+        }
         @keyframes jitter {
             0% { transform: translate(2px, 2px) rotate(0deg); }
             50% { transform: translate(-2px, -2px) rotate(-1deg); }
@@ -104,6 +123,10 @@
         <p class="stay-tuned-3">STAY TUNED!!!</p>
         
         <p class="please-text">please.</p>
+
+          <div>
+            <a href="index.html" class="retro-back-btn">BACK</a>
+         </div>
 
     </div>
 
