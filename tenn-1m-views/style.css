@@ -320,6 +320,25 @@ footer {
 .modal-content::-webkit-scrollbar-thumb {
     background: #ff00ff; 
 }
+.modal-floating-gif {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    z-index: 100; 
+    pointer-events: none; 
+}
+
+.gif-top-right {
+    top: -45px;
+    right: -45px;
+    transform: rotate(15deg); 
+}
+
+.gif-bottom-left {
+    bottom: -45px;
+    left: -45px;
+    transform: rotate(-15deg);
 
 /* Style the video container to keep 16:9 ratio */
 .modal-video-container {
