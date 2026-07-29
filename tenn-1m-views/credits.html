@@ -2,37 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hall of Fame</title>
+    <title>CREDITS</title>
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .credits-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8); 
+            color: #dddddd; 
+            text-align: center;
+        }
+
+        .credits-header {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .credits-intro {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .credits-intro img {
+            vertical-align: middle;
+            max-height: 40px;
+            margin: 0 10px;
+        }
+
+        .credits-list {
+            list-style-type: none; 
+            padding: 0;
+            margin: 40px 0;
+            text-align: left; 
+        }
+
+        .credits-list li {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            border-bottom: 1px dashed #333; 
+            padding-bottom: 10px;
+        }
+
+        .credits-name {
+            font-weight: bold;
+            color: #00ffff; 
+        }
+
+        .credits-link {
+            color: #ffaa00; 
+            text-decoration: none;
+            word-break: break-all; 
+        }
+
+        .credits-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .credits-back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 30px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #fff;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+
+        .credits-back-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #555;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <marquee class="emoji-marquee" style="background-color: #0000ff;">THE ANGELS OF THIS WORLD...</marquee>
-        <h1>CREDITS</h1>
-    </header>
+<body class="retro-body">
 
-    <main>
-        <div class="links-container">
-            <a href="index.html"><<< BACK TO MAIN</a>
+    <div class="credits-container">
+        
+        <h1 class="credits-header">CREDITS</h1>
+        
+        <!-- Top Image Placeholder -->
+        <img src="images/credits_main.png" alt="Credits Header" class="main-image">
+        
+        <div class="credits-intro">
+            <p>AND NOW...</p>
+            <p>A ROUND OF APPLAUSE FOR THE <img src="images/credits_icon.png" alt="Icon"> WHO MADE TONIGHT'S SHOW POSSIBLE!!</p>
         </div>
 
-        <div class="content-box" style="border-color: #00ffff; box-shadow: 6px 6px 0px #ff00ff;">
-            <h3 style="color: #ffff00;">HALL OF FAME</h3>
-            
-            <ul>
-                <li>Cheezwiz</li>
-                <li>Azalea</li>
-                <li>The John Musician</li>
-                <li>Didbot</li>
-            </ul>
+        <ul class="credits-list">
+            <li>
+                <span class="credits-name">Toby Fox:</span> Deltarune
+            </li>
+            <li>
+                <span class="credits-name">Cheezwiz:</span> “Tenn A. Vision” cover <br>
+                <a href="https://www.youtube.com/@Cheezwiz021" target="_blank" class="credits-link">https://www.youtube.com/@Cheezwiz021</a>
+            </li>
+            <li>
+                <span class="credits-name">Azalea:</span> “HE’S GROOVY AND” cover <br>
+                <a href="https://www.youtube.com/@azaleamusic1240/videos" target="_blank" class="credits-link">https://www.youtube.com/@azaleamusic1240/videos</a>
+            </li>
+            <li>
+                <span class="credits-name">The John Musician:</span> “Lost Sanctuary of Growing Darkness” cover <br>
+                <a href="https://www.youtube.com/results?search_query=the+john+musician" target="_blank" class="credits-link">https://www.youtube.com/results?search_query=the+john+musician</a>
+            </li>
+            <li>
+                <span class="credits-name">Didbot:</span> Every movie poster <br>
+                <a href="https://www.youtube.com/@didbot" target="_blank" class="credits-link">https://www.youtube.com/@didbot</a>
+            </li>
+            <li>
+                <span class="credits-name">AKSON:</span> Main Tenn drawing <br>
+                <a href="https://www.youtube.com/@TheAksonGuy" target="_blank" class="credits-link">https://www.youtube.com/@TheAksonGuy</a>
+            </li>
+            <li>
+                <span class="credits-name">Splshy:</span> Scair E song <br>
+                <a href="https://soundcloud.com/splshy" target="_blank" class="credits-link">https://soundcloud.com/splshy</a>
+            </li>
+            <li>
+                <span class="credits-name">Greek Guy:</span> Funny Tenn drawing <br>
+                <a href="https://bsky.app/profile/tht1greekguy.bsky.social" target="_blank" class="credits-link">https://bsky.app/profile/tht1greekguy.bsky.social</a>
+            </li>
+            <li>
+                <span class="credits-name">Jel:</span> OMEGA TENN 3D model and Scair E dance <br>
+                <a href="https://www.youtube.com/@jelllllllllllll" target="_blank" class="credits-link">https://www.youtube.com/@jelllllllllllll</a>
+            </li>
+        </ul>
 
-            <img src="https://media.giphy.com/media/l41lSLto3wzWuN9Be/giphy.gif" alt="Spinning 3D Skull" class="retro-gif">
+        <a href="index.html" class="credits-back-btn">BACK</a>
 
-            <p style="text-align: center; color: #00ff00; font-weight: bold;">
-                >>> THANK YOU GUYS!! <<<
-            </p>
-        </div>
-    </main>
+    </div>
+
 </body>
 </html>
