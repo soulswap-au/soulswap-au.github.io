@@ -378,12 +378,14 @@
             // Show modal & freeze background scroll
             document.getElementById('movieModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         }
     
         function closeModal() {
             document.getElementById('movieModal').style.display = 'none';
             document.getElementById('modalTrailer').src = "";
             document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
         }
         function triggerAnimation() {
             const closeBtn = document.getElementById('modalCloseBtn');
