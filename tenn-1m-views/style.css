@@ -330,15 +330,16 @@ footer {
 }
 
 .gif-top-right {
-    top: -45px;
-    right: -45px;
+    top: -90px;
+    right: -90px;
     transform: rotate(15deg); 
 }
 
 .gif-bottom-left {
-    bottom: -45px;
-    left: -45px;
+    bottom: -90px;
+    left: -90px;
     transform: rotate(-15deg);
+}
 
 /* Style the video container to keep 16:9 ratio */
 .modal-video-container {
