@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            text-align:left;
         }
 
         .isolated-modal {
@@ -30,9 +31,9 @@
         .modal-top {
             display: flex;
             gap: 20px;
-            min-height: 220px; 
+            min-height: 220px;
+            margin: 20px;
         }
-
         .poster-placeholder {
             width: 150px;
             height: 220px;
@@ -40,23 +41,15 @@
             background-color: #000000;
             flex-shrink: 0; 
         }
-        
-        .white-separator {
-            border: 0;
-            border-top: 1px dashed #ffffff;
-            margin: 25px 0;
-        }
         .comment-container {
             font-size: 1rem;
             line-height: 1.5;
         }
-
         .retro-comment {
             color: #00ff00;
             font-size: 1rem;
             line-height: 1.5;
             margin: 0;
-            text-align:left;
         }
     </style>
 </head>
@@ -68,8 +61,7 @@
             <div class="poster-placeholder"></div>
         </div>
         
-        <hr class="white-separator">
-        <div class="modal-comments">
+        <div class="modal-comments style="border-top: 2px dashed #ffffff">
             <h3>&gt;&gt;&gt; AUDIENCE REVIEWS</h3><p><strong>Username:</strong> Review</p>
         <p class="retro-comment"><strong>krizkroz:</strong> i remember watching this movie in class multiple times because it was the cheapest movie my cheap ass school would rent &lt;/3<br><movie sucks btw, im SO glad my schools shitty tv broke lol. they keep it in the library now</p>
         </div>
