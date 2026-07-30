@@ -500,19 +500,19 @@ footer {
 }
 .corner-gif {
     position: absolute;
-    width: 70px; 
+    width: 180px; 
     height: auto;
     z-index: 10;
     pointer-events: none; 
 }
 .gif-top-right {
-    top: -30px;
-    right: -30px;
-    transform: rotate(15deg);
+    top: -15px;
+    right: -190px;
+    transform: rotate(10deg);
 }
 .gif-bottom-left {
     bottom: -30px;
-    left: -30px;
+    left: -160px;
     transform: rotate(-15deg);
 }
 
