@@ -13,6 +13,7 @@
             border: 2px solid #555555;
             padding: 20px;
             color: #cccccc;
+            text-align:left;
         }
 
         .gb-header {
@@ -27,6 +28,7 @@
             font-size: 2rem;
             color: #ffffff;
             margin: 0;
+            animation: 2.5s ease 0s infinite normal none running blink;
         }
 
         .gb-controls {
@@ -77,14 +79,25 @@
             margin-top: 30px;
         }
 
-        .gb-nav a {
-            color: #aaaaaa;
+        .gb-back-btn {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 15px 50px;
+            font-size: 2rem;
+            font-weight: bold;
             text-decoration: none;
+            border: 6px ridge #ffff00;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            transition: transform 0.2s;
         }
 
-        .gb-nav a:hover {
-            color: #ffffff;
-            text-decoration: underline;
+        .gb-back-btn:hover {
+            transform: scale(1.1);
+            background-color: #ffff00;
+            color: #ff0000;
+            border-color: #ff0000;
         }
     </style>
 </head>
@@ -93,11 +106,11 @@
     <div class="gb-container">
         
         <div class="gb-header">
-            <h1>>>> VIEW GUESTBOOK</h1>
+            <h1>>>> GUESTBOOK</h1>
         </div>
         
         <div class="gb-controls">
-            <a href="javascript:void(0)" class="gb-disabled-btn" title="CGI Script Error: Connection Timeout">
+            <a href="javascript:void(0)" class="gb-disabled-btn" title=" Error: Connection Timeout">
                 [ SIGN GUESTBOOK - OFFLINE ]
             </a>
         </div>
@@ -145,7 +158,7 @@
         </div>
 
         <div class="gb-nav">
-            <a href="index.html">[ RETURN TO MAIN SITE ]</a>
+            <a href="index.html" class="gb-back-btn">BACK</a>
         </div>
 
     </div>
