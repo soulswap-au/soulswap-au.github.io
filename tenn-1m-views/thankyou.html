@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .content-container {
+            margin-top: 50px;
+            max-width: 600px;
+            padding: 20px;
+        }
+      .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            text-align: left;
+            color: #ffffff
+        }
+      .clickable-image {
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #ffffff;
+            cursor: zoom-in; 
+            transition: transform 0.2s ease;
+        }
+    .clickable-image.expanded {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            max-width: none;
+            object-fit: contain; 
+            background-color: rgba(0, 0, 0, 0.95); 
+            z-index: 9999; 
+            cursor: zoom-out;
+            border: none;
+            padding: 20px;
+            box-sizing: border-box;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="retro-body">
+  <div class="content-container">
+    <p class="intro-text">
+            Thank you to everyone who submited their images, thanks for been with tenn all this time and for supporting Soulswap. 
+    </p>
+    
+    <img src="images/idraws_attack_1.png" alt="Tenn images" class="clickable-image" id="expandableImg">
+  </div>  
+  <script>
+        const image = document.getElementById('expandableImg');
+        
+        image.addEventListener('click', function() {
+            // This toggles the 'expanded' CSS class on and off every time you click
+            this.classList.toggle('expanded');
+        });
+  </script>
+  
+  
+</body>
+</html>
