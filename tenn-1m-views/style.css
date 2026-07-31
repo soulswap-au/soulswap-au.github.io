@@ -652,6 +652,11 @@ footer {
     text-align: center;
     cursor: pointer;
 }
+.winner-container img {
+    display: block;
+    width: 40%;
+    height: auto;
+}
 
 @keyframes bflyRise {
     0% {
