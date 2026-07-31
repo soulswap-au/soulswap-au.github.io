@@ -35,7 +35,6 @@ body {
 h1 {
     color: #ff00ff;
     font-size: 3rem;
-    text-shadow: 2px 2px #fff;
     animation: blink 0.5s infinite;
     margin-bottom: 5px;
 }
