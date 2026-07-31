@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>* There’s a box in here…</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .coolimg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            background-color: #000;
+        }
+      .clk-img {
+            cursor: pointer;
+            transition: transform 0.1s;
+        }  
+        .clk-img:active {
+            transform: scale(0.95);
+        }  
+
+    </style>
+</head>
+<body class="retro-body">
+
+  <div class="coolimg">
+                <img src="images/jester_box.png" class="clk-img" id="soundImage" alt="Box - click me !!!">
+  </div>
+
+  
+<script>
+    const soundImg = document.getElementById('soundImage');
+    
+    const clickAudio = new Audio('https://cdn.jsdelivr.net/gh/soulswap-au/soulswap-au.github.io@main/tenn-1m-views/audio/jester%20note.m4a');
+    soundImg.addEventListener('click', function() {
+        
+        clickAudio.currentTime = 0; 
+        clickAudio.play();
+        
+    });
+</script>
+  
+</body>
+</html>
+
