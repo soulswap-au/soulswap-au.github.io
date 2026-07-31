@@ -347,16 +347,29 @@ footer {
     z-index: 2000; 
     pointer-events: none; 
 }
-
-.gif-top-right {
+/* the ones on the main screen */
+.gif-top-right-main {
     top: -10px;
     right: -70px;
     transform: rotate(15deg); 
 }
 
-.gif-bottom-left {
+.gif-bottom-left-main {
     bottom: -10px;
     left: -120px;
+    transform: rotate(-15deg);
+}
+
+/* the ones on the videos */
+.gif-top-right {
+    top: -45px;
+    right: -45px;
+    transform: rotate(15deg); 
+}
+
+.gif-bottom-left {
+    bottom: -45px;
+    left: -45px;
     transform: rotate(-15deg);
 }
 
