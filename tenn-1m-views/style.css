@@ -417,6 +417,8 @@ footer {
 .modal-desc p {
     color: #ccc;
     font-size: 1.1rem;
+    max-width:100%;
+    word-break: break-all;
 }
 
 .modal-comments {
