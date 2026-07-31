@@ -431,6 +431,46 @@
             document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
         }
+
+        /* --- HANDLE BUTTERFLY EFFECT --- */
+
+        const BUTTERFLY_GIF_SRC = 'images/butterfly.gif'; 
+        const SWARM_SIZE = 30; // How many butterflies appear
+        
+
+        function startButterflySwarm() {
+            const modalOverlay = document.getElementById('movieModal');
+            if (!modalOverlay) return; 
+        
+            for (let i = 0; i < SWARM_SIZE; i++) {
+                const img = document.createElement('img');
+                img.src = BUTTERFLY_GIF_SRC;
+                img.className = 'butterfly-swarm-member';
+                img.alt = "";
+        
+                const flyUp = Math.random() > 0.5;
+                img.style.animationName = flyUp ? 'bflyRise' : 'bflyFall';
+        
+                img.style.left = (Math.random() * 100) + '%';
+        
+                const duration = 3 + (Math.random() * 4);
+                img.style.animationDuration = duration + 's';
+        
+                const delay = Math.random() * 2;
+                img.style.animationDelay = delay + 's';
+        
+                modalOverlay.appendChild(img);
+            }
+        }
+        
+
+        function stopButterflySwarm() {
+            const butterflies = document.querySelectorAll('.butterfly-swarm-member');
+            
+            butterflies.forEach(butterfly => {
+                butterfly.remove();
+            });
+        }
     
         function closeModal() {
             document.getElementById('movieModal').style.display = 'none';
@@ -444,11 +484,13 @@
             
             modalBox.classList.add('distortion-effect');
             closeBtn.style.display = 'none';
+            startButterflySwarm();
             
             setTimeout(() => {
                 modalBox.classList.remove('distortion-effect');
                 closeBtn.style.display = 'block';
-            }, 5000);
+                stopButterflySwarm();
+            }, 8000);
         }
     </script>
 </body>
