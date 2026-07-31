@@ -628,4 +628,43 @@ footer {
     }
 }
 
+/* --- Butterfly Effect --- */
+.butterfly-swarm-member {
+    position: absolute;
+    width: 25px; 
+    height: auto;
+    pointer-events: none; 
+    z-index: 99999;
+    opacity: 0; 
+    image-rendering: pixelated;
+}
+
+@keyframes bflyRise {
+    0% {
+        transform: translate(0, 110vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    50% { transform: translate(15px, 50vh) rotate(15deg); }
+    90% { opacity: 1; }
+    100% {
+        transform: translate(-15px, -110px) rotate(-15deg); 
+        opacity: 0;
+    }
+}
+
+@keyframes bflyFall {
+    0% {
+        transform: translate(0, -110px) rotate(0deg); 
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    50% { transform: translate(-15px, 50vh) rotate(-15deg); } 
+    90% { opacity: 1; }
+    100% {
+        transform: translate(15px, 110vh) rotate(15deg);
+        opacity: 0;
+    }
+}
+
 
