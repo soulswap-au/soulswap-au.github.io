@@ -56,7 +56,7 @@
             font-size: 6rem; 
             color: #ff0000; 
             text-shadow: 5px 5px #ffaa00; 
-            animation: zoomInOutText 0.5s infinite;
+            animation: zoomInOutTenna 0.5s infinite;
             margin: 10px 0; 
         }
         .please-text { 
@@ -87,6 +87,11 @@
             0% { transform: translate(2px, 2px) rotate(0deg); }
             50% { transform: translate(-2px, -2px) rotate(-1deg); }
             100% { transform: translate(2px, -2px) rotate(1deg); }
+        }
+        @keyframes zoomInOutTenna {
+            0% { transform: translate(-10px, -10px) rotate(-3deg) scale(1); }
+            50% { transform: translate(-10px, -10px) rotate(-3deg) scale(1.15); } /* Zooms in by 15% */
+            100% { transform: translate(-10px, -10px) rotate(-3deg) scale(1); }
         }
     </style>
 </head>
