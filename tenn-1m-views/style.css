@@ -349,27 +349,27 @@ footer {
 }
 /* the ones on the main screen */
 .gif-top-right-main {
+    top: -15px;
+    right: -380px;
+    transform: rotate(10deg);
+}
+
+.gif-bottom-left-main {
+    bottom: -30px;
+    left: -380px;
+    transform: rotate(-10deg);
+}
+
+/* the ones on the videos */
+.gif-top-right {
     top: -10px;
     right: -70px;
     transform: rotate(15deg); 
 }
 
-.gif-bottom-left-main {
+.gif-bottom-left {
     bottom: -10px;
     left: -120px;
-    transform: rotate(-15deg);
-}
-
-/* the ones on the videos */
-.gif-top-right {
-    top: -45px;
-    right: -45px;
-    transform: rotate(15deg); 
-}
-
-.gif-bottom-left {
-    bottom: -45px;
-    left: -45px;
     transform: rotate(-15deg);
 }
 
@@ -517,16 +517,6 @@ footer {
     height: auto;
     z-index: 10;
     pointer-events: none; 
-}
-.gif-top-right {
-    top: -15px;
-    right: -380px;
-    transform: rotate(10deg);
-}
-.gif-bottom-left {
-    bottom: -30px;
-    left: -380px;
-    transform: rotate(-10deg);
 }
 
 @keyframes hoverFloat {
